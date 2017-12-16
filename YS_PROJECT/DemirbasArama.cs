@@ -25,7 +25,8 @@ namespace YS_PROJECT
         {
             panel_fiyat.Visible = false;
             panel_arama.Visible = true;
-
+            dataGridView1.Rows.Clear();
+            FillGrid(data);
        
             if (btn_AramaKriteri.selectedIndex == 0)//DROPDOWN DEMİRBAS ADINA GÖRE ARAMA
             {
@@ -80,30 +81,30 @@ namespace YS_PROJECT
 
         private void FiyatArama(object sender, EventArgs e)//FİYAT TEXTCHANGE
         {
-            if (txt_maxFiyat.Text != "" && txt_minFiyat.Text != "")
+            if (txt_maxFiyat.Text != "" && txt_minFiyat.Text != "" && TxtKontrol.uzunlukKontrol(txt_maxFiyat.Text) == true && TxtKontrol.SayiKontrol(txt_maxFiyat.Text) == true && TxtKontrol.uzunlukKontrol(txt_minFiyat.Text) == true && TxtKontrol.SayiKontrol(txt_minFiyat.Text) == true)
             {
                 dataGridView1.Rows.Clear();
                 foreach (var item in data)
                 {
-                    if (Convert.ToDouble(item[4]) >= Convert.ToDouble(txt_minFiyat.Text) && Convert.ToDouble(item[4]) <= Convert.ToDouble(txt_maxFiyat.Text))
+                    if (Convert.ToDouble(item[2]) >= Convert.ToDouble(txt_minFiyat.Text) && Convert.ToDouble(item[2]) <= Convert.ToDouble(txt_maxFiyat.Text))
                         dataGridView1.Rows.Add(item);
                 }
             }
-            else if (txt_maxFiyat.Text != "" && txt_minFiyat.Text == "")
+            else if (txt_maxFiyat.Text != "" && txt_minFiyat.Text == "" && TxtKontrol.uzunlukKontrol(txt_maxFiyat.Text) == true && TxtKontrol.SayiKontrol(txt_maxFiyat.Text))
             {
                 dataGridView1.Rows.Clear();
                 foreach (var item in data)
                 {
-                    if (Convert.ToDouble(item[4]) <= Convert.ToDouble(txt_maxFiyat.Text))
+                    if (Convert.ToDouble(item[2]) <= Convert.ToDouble(txt_maxFiyat.Text))
                         dataGridView1.Rows.Add(item);
                 }
             }
-            else if (txt_maxFiyat.Text == "" && txt_minFiyat.Text != "")
+            else if (txt_maxFiyat.Text == "" && txt_minFiyat.Text != "" && TxtKontrol.uzunlukKontrol(txt_minFiyat.Text) == true && TxtKontrol.SayiKontrol(txt_minFiyat.Text) == true)
             {
                 dataGridView1.Rows.Clear();
                 foreach (var item in data)
                 {
-                    if (Convert.ToDouble(item[4]) >= Convert.ToDouble(txt_minFiyat.Text))
+                    if (Convert.ToDouble(item[2]) >= Convert.ToDouble(txt_minFiyat.Text))
                         dataGridView1.Rows.Add(item);
                 }
             }
