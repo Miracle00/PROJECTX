@@ -103,24 +103,28 @@ namespace YS_PROJECT
         public void FillGrid(List<string[]> d)
         {
             dataGridView1.Rows.Clear();
-            List<string[]> tmp = new List<string[]>();
+           
+            List<string[]> ltemp = new List<string[]>();
             foreach (string[] item in d)
-            {
+            { string[] tmp = new string[5];
                 
                     string t="";
                     t += item[0].ToString();
                     t += item[1].ToString();
                     t += item[2].ToString();
                     t += item[3].ToString();
-                    //tmp[0].v = t;
-               
-                //tmp[1] = item[4][];
+                tmp[0] = t;
+                tmp[1] = item[4];
+                tmp[2] = item[5];
+                tmp[3] = item[6];
+                tmp[4] = item[7];
+                ltemp.Add(tmp);
 
             }
 
-            foreach (string[] rowArray in d)
+            foreach (string[] rowArray in ltemp)
             {
-                //dataGridView1.Rows.Add(rowArray);
+                dataGridView1.Rows.Add(rowArray);
                 
             }
         }
