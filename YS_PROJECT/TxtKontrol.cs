@@ -44,6 +44,13 @@ namespace YS_PROJECT
             else
                 return false;
         }
+        public static Boolean uzunlukKontrol2(string gelenDeger)
+        {
+            if (gelenDeger.Length <= 4)
+                return true;
+            else
+                return false;
+        }
         public static Boolean KarakterKontrol(string gelenDeger)
         {
             string Desen = @"[^A-Za-z]";

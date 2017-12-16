@@ -150,6 +150,7 @@
             this.dd_odalar.selectedIndex = -1;
             this.dd_odalar.Size = new System.Drawing.Size(215, 43);
             this.dd_odalar.TabIndex = 79;
+            this.dd_odalar.onItemSelected += new System.EventHandler(this.dd_odalar_onItemSelected);
             // 
             // bunifuCustomLabel3
             // 

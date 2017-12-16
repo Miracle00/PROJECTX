@@ -173,30 +173,53 @@ namespace YS_PROJECT
 
         private void btn_demirbasEkle_Click(object sender, EventArgs e)
         {
-            if (dd_fakulteler.selectedIndex != -1 && dd_departmanlar.selectedIndex != -1 && dd_odalar.selectedIndex != -1 && dd_demirbasTur.selectedIndex!=-1 && dd_demirbaslar.selectedIndex!=-1)
+            if (dd_fakulteler.selectedIndex != -1 && dd_departmanlar.selectedIndex != -1 && dd_odalar.selectedIndex != -1
+                && dd_demirbasTur.selectedIndex != -1 && dd_demirbaslar.selectedIndex != -1)
             {
-                if (Convert.ToInt16(txt_stokMiktari.Text) > Convert.ToInt16(txt_adet.Text))
+                if (TxtKontrol.SayiKontrol(txt_adet.Text) && TxtKontrol.dolulukKontrol(txt_adet.Text) && TxtKontrol.uzunlukKontrol2(txt_adet.Text))
                 {
-                    string secilenDemirbasID = demirbas[dd_demirbaslar.selectedIndex][0];
-                    string secilenOdaID = odalar[dd_odalar.selectedIndex][0];
-                    List<string> value = new List<string>() { secilenOdaID, secilenDemirbasID, txt_adet.Text };
-                    dbo.Select(sqlConnectionString.odaDemirbasEkle, sqlConnectionString.odaDemirbasEkleParametre, value);
-                    FillGrid();
-                    dd_demirbasTur.Clear();
-                    dd_demirbaslar.Clear();
-                    txt_stokMiktari.Text = "";
-                    txt_adet.Text = "";
+                    if (Convert.ToInt16(txt_stokMiktari.Text) > Convert.ToInt16(txt_adet.Text))
+                    {                 
+                        string secilenDemirbasID = demirbas[dd_demirbaslar.selectedIndex][0];
+                        string secilenOdaID = odalar[dd_odalar.selectedIndex][0];
+                        List<string> value = new List<string>() { secilenOdaID, secilenDemirbasID, txt_adet.Text };
+                        dbo.Select(sqlConnectionString.odaDemirbasEkle, sqlConnectionString.odaDemirbasEkleParametre, value);
+                        FillGrid();
+                        dd_demirbasTur.Clear();
+                        dd_demirbaslar.Clear();
+                        txt_stokMiktari.Text = "";
+                        txt_adet.Text = "";
 
-                    panel_uyari(true);
+                        panel_uyari(true);
+                    }
+                    else
+                    {
+                        panel_uyari(false);
+                        lbl_uyari.Text = "Adet sayısı fazla";
+                    }
+
 
                 }
+                else
+                {
+                    panel_uyari(false);
+                    lbl_uyari.Text = "İşlem başarısız";
+                   
+                }
             }
-           
             else
             {
                 panel_uyari(false);
-                lbl_uyari.Text = "Adet sayısı fazla";
+                lbl_uyari.Text = "İşlem başarısız";
             }
+          
+
+
+        }
+
+        private void dd_odalar_onItemSelected(object sender, EventArgs e)
+        {
+            pnl_uyari.Visible=false;
         }
     }
 }
