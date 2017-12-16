@@ -39,14 +39,15 @@
             this.dd_fakulteler = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_uygula = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtPersonelAd = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.pnl_uyari = new System.Windows.Forms.Panel();
             this.lbl_uyari = new System.Windows.Forms.Label();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnl_uyari.SuspendLayout();
             this.SuspendLayout();
@@ -168,36 +169,15 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(98, 180);
+            this.dataGridView1.Location = new System.Drawing.Point(30, 180);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(644, 298);
+            this.dataGridView1.Size = new System.Drawing.Size(842, 298);
             this.dataGridView1.TabIndex = 74;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Demirbaş Türü";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Demirbaş Adı";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Açıklama";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Adet";
-            this.Column4.Name = "Column4";
             // 
             // btn_uygula
             // 
@@ -275,6 +255,34 @@
             this.lbl_uyari.TabIndex = 1;
             this.lbl_uyari.Text = "İşlem Başarısız !";
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Demirbaş Kodu";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 200;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Demirbaş Türü";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Demirbaş Adı";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Açıklama";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Adet";
+            this.Column4.Name = "Column4";
+            // 
             // OdaBilgileri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,12 +323,13 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private Bunifu.Framework.UI.BunifuFlatButton btn_uygula;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtPersonelAd;
+        private System.Windows.Forms.Panel pnl_uyari;
+        private System.Windows.Forms.Label lbl_uyari;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtPersonelAd;
-        private System.Windows.Forms.Panel pnl_uyari;
-        private System.Windows.Forms.Label lbl_uyari;
     }
 }

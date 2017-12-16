@@ -44,9 +44,7 @@ namespace YS_PROJECT
 
         public static string odaGuncelle2 = "update tblOda set odaAdi=@odaAdi,departmanID=@departmanID,personelID=@personelID where odaID=@odaID";
         public static List<string> odaGuncelleParam2 = new List<string>() { "odaAdi", "departmanID", "personelID", "odaID" };
-
         
-
 
         public static string odaDemirbasGetir= "select dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama,SUM(oda.adet) from (tblOdaDemirbasAtama oda inner join (tblDemirbas d inner join tblDemirbasTurleri dt on d.demirbasTuruID = dt.demirbasTuruID) on oda.demirbasID=d.demirbasID) inner join tblOda o  on o.odaID=oda.odaID where o.odaID=@odaID GROUP BY d.demirbasID,dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama";
         public static List<string> odaDemirbasGetirParam = new List<string>() { "odaID" };
@@ -72,10 +70,8 @@ namespace YS_PROJECT
         public static List<string> demirbasParam = new List<string>() { "demirbasAdi", "aciklama", "fiyat", "alimTarihi", "demirbasTuruID", "fakulteID", "departmanID", "adet" };
 
 
-        /*
-        select o.odaAdi, d.demirbasAdi, d.fiyat, od.adet
-         from tblDemirbas d inner join (tblOdaDemirbasAtama od inner join tblOda o on o.odaID= od.odaID) on d.demirbasID=od.odaDemirbasAtamaID ;
-         */
 
+        public static string odaDemirbasGetir3 = " select d.fakulteID,d.departmanID,d.demirbasTuruID,d.demirbasID,dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama from (tblOdaDemirbasAtama oda inner join (tblDemirbas d inner join tblDemirbasTurleri dt on d.demirbasTuruID = dt.demirbasTuruID) on oda.demirbasID=d.demirbasID) inner join tblOda o  on o.odaID=oda.odaID where o.odaID=@odaID";
+        public static List<string> odaDemirbasGetirParam3 = new List<string>() { "odaID" };
     }
 }

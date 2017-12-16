@@ -95,7 +95,7 @@ namespace YS_PROJECT
             }
 
             List<string[]> data = new List<string[]>();
-            data=dbo.Select(sqlConnectionString.odaDemirbasGetir, sqlConnectionString.odaDemirbasGetirParam, sOdaID);
+            data=dbo.Select(sqlConnectionString.odaDemirbasGetir3, sqlConnectionString.odaDemirbasGetirParam3, sOdaID);
 
             FillGrid(data);
             pnl_uyari.Visible = false;
@@ -103,9 +103,25 @@ namespace YS_PROJECT
         public void FillGrid(List<string[]> d)
         {
             dataGridView1.Rows.Clear();
+            List<string[]> tmp = new List<string[]>();
+            foreach (string[] item in d)
+            {
+                
+                    string t="";
+                    t += item[0].ToString();
+                    t += item[1].ToString();
+                    t += item[2].ToString();
+                    t += item[3].ToString();
+                    //tmp[0].v = t;
+                
+                //tmp[1] = item[4][];
+
+            }
+
             foreach (string[] rowArray in d)
             {
-                dataGridView1.Rows.Add(rowArray);
+                //dataGridView1.Rows.Add(rowArray);
+                
             }
         }
 
