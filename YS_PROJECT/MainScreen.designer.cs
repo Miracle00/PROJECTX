@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -35,11 +36,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btn_cikis = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Personel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_odaIslem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_demirbasIslem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_satinAlim = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -49,6 +52,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(102)))), ((int)(((byte)(254)))));
+            this.panel1.Controls.Add(this.btn_cikis);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btn_Personel);
@@ -84,7 +88,7 @@
             // 
             this.lbl_kullanici.AutoSize = true;
             this.lbl_kullanici.ForeColor = System.Drawing.Color.White;
-            this.lbl_kullanici.Location = new System.Drawing.Point(55, 16);
+            this.lbl_kullanici.Location = new System.Drawing.Point(101, 17);
             this.lbl_kullanici.Name = "lbl_kullanici";
             this.lbl_kullanici.Size = new System.Drawing.Size(36, 13);
             this.lbl_kullanici.TabIndex = 1;
@@ -117,6 +121,41 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(899, 622);
             this.panel5.TabIndex = 2;
+            // 
+            // btn_cikis
+            // 
+            this.btn_cikis.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(209)))));
+            this.btn_cikis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(179)))), ((int)(((byte)(227)))));
+            this.btn_cikis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_cikis.BorderRadius = 0;
+            this.btn_cikis.ButtonText = "Çıkış";
+            this.btn_cikis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cikis.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_cikis.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_cikis.Iconimage = global::YS_PROJECT.Properties.Resources.exit;
+            this.btn_cikis.Iconimage_right = null;
+            this.btn_cikis.Iconimage_right_Selected = null;
+            this.btn_cikis.Iconimage_Selected = null;
+            this.btn_cikis.IconMarginLeft = 0;
+            this.btn_cikis.IconMarginRight = 0;
+            this.btn_cikis.IconRightVisible = true;
+            this.btn_cikis.IconRightZoom = 0D;
+            this.btn_cikis.IconVisible = true;
+            this.btn_cikis.IconZoom = 90D;
+            this.btn_cikis.IsTab = false;
+            this.btn_cikis.Location = new System.Drawing.Point(2, 524);
+            this.btn_cikis.Name = "btn_cikis";
+            this.btn_cikis.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(179)))), ((int)(((byte)(227)))));
+            this.btn_cikis.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(209)))));
+            this.btn_cikis.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_cikis.selected = false;
+            this.btn_cikis.Size = new System.Drawing.Size(250, 60);
+            this.btn_cikis.TabIndex = 8;
+            this.btn_cikis.Text = "Çıkış";
+            this.btn_cikis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_cikis.Textcolor = System.Drawing.Color.White;
+            this.btn_cikis.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cikis.Click += new System.EventHandler(this.btn_cikis_Click);
             // 
             // btn_Personel
             // 
@@ -302,6 +341,8 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lbl_kullanici;
         private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_cikis;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

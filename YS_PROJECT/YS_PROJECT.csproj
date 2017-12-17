@@ -263,6 +263,7 @@
     <Content Include="Resources\demirbas1.png" />
     <Content Include="Resources\demirbas2.png" />
     <None Include="Resources\excel.png" />
+    <None Include="Resources\exit.png" />
     <Content Include="Resources\log.png" />
     <Content Include="Resources\log1.png" />
     <Content Include="Resources\log2.png" />
