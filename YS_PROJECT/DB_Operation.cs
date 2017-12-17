@@ -58,7 +58,7 @@ namespace YS_PROJECT
             return result;
 
         }
-
+        public static object sonindex;
         public bool Save(string command, List<string> keys, List<string> values)//SAVE KOMUTU 
         {
             using (conn = new SqlConnection(connection))
@@ -72,6 +72,10 @@ namespace YS_PROJECT
                 int success = sqlCommand.ExecuteNonQuery();
                 if (success <= 0)
                     return false;
+
+                string command2 = "Select @@Identity";
+                SqlCommand sqlCommand2 = new SqlCommand(command2, conn);
+                sonindex = sqlCommand2.ExecuteScalar();
             }
             return true;
         }
@@ -124,28 +128,6 @@ namespace YS_PROJECT
             return true;
         }
 
-        public static object sonindex;
-        public bool Save2(string command, List<string> keys, List<string> values)
-        {
-            using (conn = new SqlConnection(connection))
-            {
-                conn.Open();
-
-                SqlCommand sqlCommand = new SqlCommand(command, conn);
-                for (int i = 0; i < keys.Count; i++)
-                    sqlCommand.Parameters.AddWithValue("@" + keys[i], values[i]);
-                
-                int success = sqlCommand.ExecuteNonQuery();
-                
-                if (success <= 0)
-                    return false;
-
-                string command2 = "Select @@Identity";
-                SqlCommand sqlCommand2 = new SqlCommand(command2, conn);
-                sonindex = sqlCommand2.ExecuteScalar();
-            }
-            
-            return true;
-        }
+       
     }
 }

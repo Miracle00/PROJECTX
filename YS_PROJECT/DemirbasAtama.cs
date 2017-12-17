@@ -56,7 +56,7 @@ namespace YS_PROJECT
                 pnl_uyari.BackColor = Color.Lime;
             }
         }
-        public void FillGrid()//TÜM VERİLERİ
+        public void FillGrid()//ODA ÜZERİNDE BULUNAN TÜM DEMİRBAŞLARI GÖRÜNTÜLE
         {
             string index = odalar[dd_odalar.selectedIndex][0].ToString();
             int oID = Convert.ToInt32(index);
@@ -70,7 +70,7 @@ namespace YS_PROJECT
                 dataGridView1.Rows.Add(rowArray);
             }
         }
-        public void FakulteleriGetir()
+        public void FakulteleriGetir()//FAKULTELER
         {
             fakulteler = dbo.Select(sqlConnectionString.fakulteIsimleri);
             for (int i = 0; i < fakulteler.Count; i++)
@@ -79,7 +79,7 @@ namespace YS_PROJECT
             }
 
         }
-        public void DepartmanlariGetir(List<string> gelenbilgiler)
+        public void DepartmanlariGetir(List<string> gelenbilgiler)//DEPARTMANLAR(FAKULTE ID)
         {
             dd_departmanlar.Clear();
             departmanlar = dbo.Select(sqlConnectionString.dprt, sqlConnectionString.fID, gelenbilgiler);
@@ -90,7 +90,7 @@ namespace YS_PROJECT
 
             }
         }
-        public void OdalariGetir(List<string> gelenbilgiler)
+        public void OdalariGetir(List<string> gelenbilgiler)//ODALAR(DEPARTMAN ID)
         {
             odalar = dbo.Select(sqlConnectionString.odaIsimleri, sqlConnectionString.odaIsimleriParametreler, gelenbilgiler);
 
@@ -100,7 +100,7 @@ namespace YS_PROJECT
 
             }
         }
-        public void DemirbasGetir(List<string> gelenbilgiler)
+        public void DemirbasGetir(List<string> gelenbilgiler)//DEMİRBASLAR(ODA ISIM)
         {
             demirbas = dbo.Select(sqlConnectionString.demirbaslar2, sqlConnectionString.demirbaslar2Parametreler, gelenbilgiler);
 
@@ -110,7 +110,7 @@ namespace YS_PROJECT
 
             }
         }
-        public void DemirbasTurGetir()
+        public void DemirbasTurGetir()//DEMİRBAS 
         {
             demirbasTur = dbo.Select(sqlConnectionString.demirbasTur);
 

@@ -32,9 +32,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_cikis = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_kullanici = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_Personel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_odaIslem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_demirbasIslem = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -43,7 +43,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblTime = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -112,11 +111,19 @@
             this.panel6.Size = new System.Drawing.Size(250, 38);
             this.panel6.TabIndex = 7;
             // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(20, 4);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(0, 13);
+            this.lblTime.TabIndex = 2;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panel4.Controls.Add(this.lbl_kullanici);
-            this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(1, 160);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(250, 38);
@@ -125,23 +132,13 @@
             // lbl_kullanici
             // 
             this.lbl_kullanici.AutoSize = true;
+            this.lbl_kullanici.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_kullanici.ForeColor = System.Drawing.Color.White;
-            this.lbl_kullanici.Location = new System.Drawing.Point(101, 17);
+            this.lbl_kullanici.Location = new System.Drawing.Point(2, 6);
             this.lbl_kullanici.Name = "lbl_kullanici";
-            this.lbl_kullanici.Size = new System.Drawing.Size(36, 13);
+            this.lbl_kullanici.Size = new System.Drawing.Size(52, 23);
             this.lbl_kullanici.TabIndex = 1;
             this.lbl_kullanici.Text = "Sayın:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(87, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HOŞGELDİNİZ";
             // 
             // btn_Personel
             // 
@@ -316,15 +313,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(20, 4);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(0, 13);
-            this.lblTime.TabIndex = 2;
-            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,7 +349,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lbl_kullanici;
-        private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuFlatButton btn_cikis;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblTime;

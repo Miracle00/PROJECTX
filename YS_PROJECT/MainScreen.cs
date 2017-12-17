@@ -36,6 +36,7 @@ namespace YS_PROJECT
         {
             kullanici = dbo.Select(sqlConnectionString.kullanicininAdiSoyadi, sqlConnectionString.kAS, kullaniciBilgi);
             lbl_kullanici.Text =" "+kullanici[0][0] +" "+ kullanici[0][1];
+            lbl_kullanici.Text = lbl_kullanici.Text.ToUpper();
             panel1.Visible = true;
         }
 

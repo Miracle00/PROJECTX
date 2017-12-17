@@ -52,7 +52,7 @@ namespace YS_PROJECT
             {
                 if (Personeller()==0)//PERSONEL EKLENİR.
                 {
-                    bool flag = dbo.Save2(sqlConnectionString.personelEkle, sqlConnectionString.personelParam, personelBilgi);
+                    bool flag = dbo.Save(sqlConnectionString.personelEkle, sqlConnectionString.personelParam, personelBilgi);
                     panel_uyari(true);                  
                 }
                 else if(Personeller()==1)//AYNI PERSONEL VAR.
@@ -64,9 +64,9 @@ namespace YS_PROJECT
                 {
                     if (cb_admin.Checked == true || cb_nKullanici.Checked == true)
                     {
-                        if (TxtKontrol.SayiveyaHarfKontrol(txt_kullaniciAdi.Text) == true && TxtKontrol.dolulukKontrol(txt_kullaniciAdi.Text) == true && TxtKontrol.uzunlukKontrol(txt_kullaniciAdi.Text) == true)
+                        if (TxtKontrol.SayiveyaHarfKontrol(txt_kullaniciAdi.Text) == false && TxtKontrol.dolulukKontrol(txt_kullaniciAdi.Text) == true && TxtKontrol.uzunlukKontrol(txt_kullaniciAdi.Text) == true)
                         {
-                            if (TxtKontrol.SayiveyaHarfKontrol(txt_sifre.Text) == true && TxtKontrol.dolulukKontrol(txt_sifre.Text) == true && TxtKontrol.uzunlukKontrol(txt_sifre.Text) == true)
+                            if (TxtKontrol.SayiveyaHarfKontrol(txt_sifre.Text) == false && TxtKontrol.dolulukKontrol(txt_sifre.Text) == true && TxtKontrol.uzunlukKontrol(txt_sifre.Text) == true)
                                 KullaniciEkle(true);
                             else
                                 KullaniciEkle(false);
@@ -109,7 +109,7 @@ namespace YS_PROJECT
                     }
                     if(personelKontrol==false)//AYNI PERSONEL YOKSA PERSONEL VE KULLANICIYI EKLE
                     {
-                            dbo.Save2(sqlConnectionString.personelEkle, sqlConnectionString.personelParam, personelBilgi);
+                            dbo.Save(sqlConnectionString.personelEkle, sqlConnectionString.personelParam, personelBilgi);
                             string pID = (DB_Operation.sonindex).ToString();
                             string kAd = txt_kullaniciAdi.Text;
                             string sifre = txt_sifre.Text;
