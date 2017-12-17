@@ -74,6 +74,7 @@
             this.txt_sifre.TabIndex = 40;
             this.txt_sifre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_sifre.OnValueChanged += new System.EventHandler(this.txt_sifre_OnValueChanged);
+            this.txt_sifre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sifre_KeyPress);
             // 
             // txt_kullanciAdi
             // 
@@ -93,6 +94,7 @@
             this.txt_kullanciAdi.TabIndex = 39;
             this.txt_kullanciAdi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_kullanciAdi.OnValueChanged += new System.EventHandler(this.txt_kullanciAdi_OnValueChanged);
+            this.txt_kullanciAdi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_kullanciAdi_KeyPress);
             // 
             // pnl_uyari
             // 

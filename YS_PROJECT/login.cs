@@ -74,5 +74,38 @@ namespace YS_PROJECT
         {
             pnl_uyari.Visible = false;
         }
+        private void txt_sifre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToInt32(e.KeyChar) == 13)
+            {
+                logKontrol();
+            }
+        }
+        private void txt_kullanciAdi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            logKontrol();
+        }
+        public void logKontrol()
+        {
+            string kullaniciAdi;
+            string sifre;
+            //KULLANICI ADI: ÖZEL KARAKTER-DOLULUK-UZUNLUK KONTROLÜ
+            if (TxtKontrol.SayiveyaHarfKontrol(txt_kullanciAdi.Text) == false && TxtKontrol.dolulukKontrol(txt_kullanciAdi.Text) == true && TxtKontrol.uzunlukKontrol(txt_kullanciAdi.Text) == true)
+            {
+                kullaniciAdi = txt_kullanciAdi.Text;
+                //ŞİFRE: ÖZEL KARAKTER-DOLULUK-UZUNLUK KONTROLÜ
+                if (TxtKontrol.SayiveyaHarfKontrol(txt_sifre.Text) == false && TxtKontrol.dolulukKontrol(txt_sifre.Text) == true && TxtKontrol.uzunlukKontrol(txt_sifre.Text) == true)
+                {
+                    sifre = txt_sifre.Text;
+                    baglan(kullaniciAdi, sifre);
+                }
+                else
+                    pnl_uyari.Visible = true;
+            }
+            else
+                pnl_uyari.Visible = true;
+        }
+
+       
     }
 }

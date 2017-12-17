@@ -63,6 +63,7 @@
             this.Column3,
             this.Column4,
             this.Column5});
+            this.dataGridView1.Enabled = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView1.Location = new System.Drawing.Point(201, 49);
             this.dataGridView1.Name = "dataGridView1";
