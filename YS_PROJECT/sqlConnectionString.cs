@@ -90,5 +90,8 @@ namespace YS_PROJECT
 
         public static string kullanciSil = "DELETE FROM tblKullanicilar where personelID=@personelID";
         public static List<string> kullaniciSilParametreler = new List<string>() { "personelID" };
+
+        public static string kullanicininAdiSoyadi = "select  p.personelAdi,p.personelSoyad from tblKullanicilar k inner join tblPersonel p on k.personelID=p.personelID where p.personelID=@personelID";
+        public static List<string> kAS = new List<string>() { "personelID" };
     }
 }

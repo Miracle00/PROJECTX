@@ -22,15 +22,20 @@ namespace YS_PROJECT
         PersonelIslemleri PI;
         SatinAlimIslemleri SA;
         DemirbasIslemleri DI;
+        DB_Operation dbo = new DB_Operation();
+        List<string> kullaniciBilgi;
         public MainScreen(List<String[]> kullanici)
         {
             this.kullanici = kullanici;
+            string username = kullanici[0][1];
+            kullaniciBilgi = new List<string>() { username };
             InitializeComponent();
             MainScreenYenileme();
         }
         public void MainScreenYenileme()//Kullanıcı girişi yapıldıktran sonra ekranda olacak değişiklikler
         {
-            lbl_kullanici.Text += kullanici[0][2];
+            kullanici = dbo.Select(sqlConnectionString.kullanicininAdiSoyadi, sqlConnectionString.kAS, kullaniciBilgi);
+            lbl_kullanici.Text += kullanici[0][0] + kullanici[0][1];
             panel1.Visible = true;
         }
 
