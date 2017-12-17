@@ -81,6 +81,7 @@
             this.dd_departmanlar.selectedIndex = -1;
             this.dd_departmanlar.Size = new System.Drawing.Size(285, 43);
             this.dd_departmanlar.TabIndex = 36;
+            this.dd_departmanlar.onItemSelected += new System.EventHandler(this.dd_departmanlar_onItemSelected);
             // 
             // bunifuCustomLabel2
             // 
@@ -148,6 +149,7 @@
             this.dd_demirbasTur.selectedIndex = -1;
             this.dd_demirbasTur.Size = new System.Drawing.Size(285, 43);
             this.dd_demirbasTur.TabIndex = 39;
+            this.dd_demirbasTur.onItemSelected += new System.EventHandler(this.dd_demirbasTur_onItemSelected);
             // 
             // txt_demirbasAdi
             // 
@@ -166,6 +168,7 @@
             this.txt_demirbasAdi.Size = new System.Drawing.Size(285, 43);
             this.txt_demirbasAdi.TabIndex = 42;
             this.txt_demirbasAdi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_demirbasAdi.OnValueChanged += new System.EventHandler(this.txt_demirbasAdi_OnValueChanged);
             // 
             // bunifuCustomLabel4
             // 
@@ -194,6 +197,7 @@
             this.txt_aciklama.Size = new System.Drawing.Size(444, 221);
             this.txt_aciklama.TabIndex = 44;
             this.txt_aciklama.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_aciklama.OnValueChanged += new System.EventHandler(this.txt_aciklama_OnValueChanged);
             // 
             // bunifuCustomLabel5
             // 
@@ -232,6 +236,7 @@
             this.txt_demirbasFiyat.Size = new System.Drawing.Size(285, 43);
             this.txt_demirbasFiyat.TabIndex = 48;
             this.txt_demirbasFiyat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_demirbasFiyat.OnValueChanged += new System.EventHandler(this.txt_demirbasFiyat_OnValueChanged);
             // 
             // bunifuCustomLabel7
             // 
@@ -284,6 +289,7 @@
             this.txt_demirbasAdet.Size = new System.Drawing.Size(285, 43);
             this.txt_demirbasAdet.TabIndex = 52;
             this.txt_demirbasAdet.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_demirbasAdet.OnValueChanged += new System.EventHandler(this.txt_demirbasAdet_OnValueChanged);
             // 
             // bunifuCustomLabel8
             // 

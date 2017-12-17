@@ -61,7 +61,25 @@ namespace YS_PROJECT
             else
                 return false;
         }
-        
+        public static Boolean KarakterKontrol2(string gelenDeger)
+        {
+            string Desen = @"[^a-zA-Z0-9IOĞÜŞİÇzığüşçö.,;!=\s]";
+            reg = new Regex(Desen);
+            if (reg.IsMatch(gelenDeger))
+                return true;
+            else
+                return false;
+        }
+        public static Boolean SayiKontrol2(string gelenDeger)
+        {
+            string Desen = @"^[0-9]{1,5}([\,][0-9]{1,5})?$";
+            reg = new Regex(Desen);
+            if (reg.IsMatch(gelenDeger))
+                return true;
+            else
+                return false;
+        }
+
     }
 }
 

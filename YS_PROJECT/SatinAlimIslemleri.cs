@@ -81,17 +81,26 @@ namespace YS_PROJECT
                 string aciklama = "";
                 string fiyat = txt_demirbasFiyat.Text;
                 string adet = txt_demirbasAdet.Text;
-                string tarih = dp_alimTarihi.Text;
-                if (TxtKontrol.dolulukKontrol(txt_aciklama.Text) == true && txt_aciklama.Text.Length <= 200 && TxtKontrol.KarakterKontrol(txt_aciklama.Text) == false)
+                DateTime tarih = Convert.ToDateTime(dp_alimTarihi.Text);
+                Boolean aciklamaKontrol = false;
+                if (TxtKontrol.dolulukKontrol(txt_aciklama.Text) == true && txt_aciklama.Text.Length <= 200 && TxtKontrol.KarakterKontrol2(txt_aciklama.Text) == false)
                     aciklama = txt_aciklama.Text;
-                else
+                else if (TxtKontrol.dolulukKontrol(txt_aciklama.Text) == false)
                     aciklama = "";
-                if (TxtKontrol.SayiKontrol(txt_demirbasFiyat.Text) == true && TxtKontrol.uzunlukKontrol(txt_demirbasFiyat.Text) == true && TxtKontrol.dolulukKontrol(txt_demirbasFiyat.Text) == true &&
-                    TxtKontrol.SayiKontrol(txt_demirbasAdet.Text) == true && TxtKontrol.uzunlukKontrol(txt_demirbasAdet.Text) == true && TxtKontrol.dolulukKontrol(txt_demirbasAdet.Text) == true)
+                else
+                {
+                    panel_uyari(false);
+                    lbl_uyari.Text = "Eksik veya hatalı bilgi";
+                    aciklamaKontrol = true;
+                }
+                    
+                if (TxtKontrol.SayiKontrol2(txt_demirbasFiyat.Text) == true && TxtKontrol.uzunlukKontrol(txt_demirbasFiyat.Text) == true && TxtKontrol.dolulukKontrol(txt_demirbasFiyat.Text) == true &&
+                    TxtKontrol.SayiKontrol(txt_demirbasAdet.Text) == true && TxtKontrol.uzunlukKontrol(txt_demirbasAdet.Text) == true && TxtKontrol.dolulukKontrol(txt_demirbasAdet.Text) == true
+                    && aciklamaKontrol==false)
                 {
                     MessageBox.Show(demirbasAdi + " " + aciklama + " " + fiyat + " " + tarih + " " + dtindex + " " + fID + " " + dindex + " " + adet);
-                    List<string> demirbasBilgi = new List<string> { demirbasAdi, aciklama, fiyat, tarih, dtindex, fID, dindex, adet };
-                    bool flag = dbo.Save(sqlConnectionString.demirbasEkle, sqlConnectionString.demirbasParam, demirbasBilgi);
+                    List<object> demirbasBilgi = new List<object> { demirbasAdi, aciklama, fiyat, tarih, dtindex, fID, dindex, adet };
+                    bool flag = dbo.Save2(sqlConnectionString.demirbasEkle, sqlConnectionString.demirbasParam, demirbasBilgi);
                     if (flag)
                     {
                         panel_uyari(true);
@@ -126,6 +135,7 @@ namespace YS_PROJECT
             fID = index;
             List<string> i = new List<string>() { index };
             DepartmanlariGetir(i);
+            pnl_uyari.Visible = false;
         }
         public void panel_uyari(Boolean x)
         {
@@ -146,6 +156,36 @@ namespace YS_PROJECT
         private void SatinAlimIslemleri_Load(object sender, EventArgs e)
         {
             dp_alimTarihi.Text= DateTime.Now.ToShortDateString();
+        }
+
+        private void dd_departmanlar_onItemSelected(object sender, EventArgs e)
+        {
+            pnl_uyari.Visible = false;
+        }
+
+        private void dd_demirbasTur_onItemSelected(object sender, EventArgs e)
+        {
+            pnl_uyari.Visible = false;
+        }
+
+        private void txt_demirbasAdi_OnValueChanged(object sender, EventArgs e)
+        {
+            pnl_uyari.Visible = false;
+        }
+
+        private void txt_demirbasFiyat_OnValueChanged(object sender, EventArgs e)
+        {
+            pnl_uyari.Visible = false;
+        }
+
+        private void txt_demirbasAdet_OnValueChanged(object sender, EventArgs e)
+        {
+            pnl_uyari.Visible = false;
+        }
+
+        private void txt_aciklama_OnValueChanged(object sender, EventArgs e)
+        {
+            pnl_uyari.Visible = false;
         }
     }
 }

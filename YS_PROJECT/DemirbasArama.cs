@@ -81,7 +81,7 @@ namespace YS_PROJECT
 
         private void FiyatArama(object sender, EventArgs e)//FİYAT TEXTCHANGE
         {
-            if (txt_maxFiyat.Text != "" && txt_minFiyat.Text != "" && TxtKontrol.uzunlukKontrol(txt_maxFiyat.Text) == true && TxtKontrol.SayiKontrol(txt_maxFiyat.Text) == true && TxtKontrol.uzunlukKontrol(txt_minFiyat.Text) == true && TxtKontrol.SayiKontrol(txt_minFiyat.Text) == true)
+            if (txt_maxFiyat.Text != "" && txt_minFiyat.Text != "" && TxtKontrol.uzunlukKontrol(txt_maxFiyat.Text) == true && TxtKontrol.SayiKontrol2(txt_maxFiyat.Text) == true && TxtKontrol.uzunlukKontrol(txt_minFiyat.Text) == true && TxtKontrol.SayiKontrol2(txt_minFiyat.Text) == true)
             {
                 dataGridView1.Rows.Clear();
                 foreach (var item in data)
@@ -90,7 +90,7 @@ namespace YS_PROJECT
                         dataGridView1.Rows.Add(item);
                 }
             }
-            else if (txt_maxFiyat.Text != "" && txt_minFiyat.Text == "" && TxtKontrol.uzunlukKontrol(txt_maxFiyat.Text) == true && TxtKontrol.SayiKontrol(txt_maxFiyat.Text))
+            else if (txt_maxFiyat.Text != "" && txt_minFiyat.Text == "" && TxtKontrol.uzunlukKontrol(txt_maxFiyat.Text) == true && TxtKontrol.SayiKontrol2(txt_maxFiyat.Text))
             {
                 dataGridView1.Rows.Clear();
                 foreach (var item in data)
@@ -99,7 +99,7 @@ namespace YS_PROJECT
                         dataGridView1.Rows.Add(item);
                 }
             }
-            else if (txt_maxFiyat.Text == "" && txt_minFiyat.Text != "" && TxtKontrol.uzunlukKontrol(txt_minFiyat.Text) == true && TxtKontrol.SayiKontrol(txt_minFiyat.Text) == true)
+            else if (txt_maxFiyat.Text == "" && txt_minFiyat.Text != "" && TxtKontrol.uzunlukKontrol(txt_minFiyat.Text) == true && TxtKontrol.SayiKontrol2(txt_minFiyat.Text) == true)
             {
                 dataGridView1.Rows.Clear();
                 foreach (var item in data)

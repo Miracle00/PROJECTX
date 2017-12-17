@@ -75,6 +75,22 @@ namespace YS_PROJECT
             }
             return true;
         }
+        public bool Save2(string command, List<string> keys, List<object> values)
+        {
+            using (conn = new SqlConnection(connection))
+            {
+                conn.Open();
+
+                SqlCommand sqlCommand = new SqlCommand(command, conn);
+                for (int i = 0; i < keys.Count; i++)
+                    sqlCommand.Parameters.AddWithValue("@" + keys[i], values[i]);
+
+                int success = sqlCommand.ExecuteNonQuery();
+                if (success <= 0)
+                    return false;
+            }
+            return true;
+        }
         public bool Delete(string command, List<string> keys, List<string> values)//DÜZENLEME YAP
         {
             using (conn = new SqlConnection(connection))
