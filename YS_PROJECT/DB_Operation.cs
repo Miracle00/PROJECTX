@@ -10,13 +10,13 @@ namespace YS_PROJECT
     public class DB_Operation
     {
         SqlConnection conn;
-        public static string connection = @"Data Source=DESKTOP-3RES620;Initial Catalog=StokDB;Integrated Security=True";
-        //public static string connection = @"Data Source=TOSHIBAPC\SQLEXPRESS;Initial Catalog=StokDB;Integrated Security=True";
-        public List<string[]> Select(string command, List<string> keys, List<string> values)
+        public static string connection = @"Data Source=DESKTOP-3RES620;Initial Catalog=StokDB;Integrated Security=True";//SERGEN
+        //public static string connection = @"Data Source=TOSHIBAPC\SQLEXPRESS;Initial Catalog=StokDB;Integrated Security=True";//YUSUF
+        public List<string[]> Select(string command, List<string> keys, List<string> values)//SEÇME SORGUSU 3 PARAMETRELİ
         {
             SqlConnection conn = new SqlConnection(connection);
 
-                
+                //KEYLER VE VALUELAR  List<string> olarak ,veritabanından dönen değerler list<string[]> döner dinamiklik sağlanmış olur.
                 conn.Open();
                 SqlCommand sqlCommand = new SqlCommand(command, conn);
 
@@ -37,7 +37,7 @@ namespace YS_PROJECT
                 return result;
             
         }
-        public List<string[]> Select(string command)
+        public List<string[]> Select(string command)//SELECT SORGUSU TEK PARAMETRELİ
         {
             SqlConnection conn = new SqlConnection(connection);
 
@@ -59,7 +59,7 @@ namespace YS_PROJECT
 
         }
 
-        public bool Save(string command, List<string> keys, List<string> values)
+        public bool Save(string command, List<string> keys, List<string> values)//SAVE KOMUTU 
         {
             using (conn = new SqlConnection(connection))
             {
@@ -75,7 +75,7 @@ namespace YS_PROJECT
             }
             return true;
         }
-        public bool Save2(string command, List<string> keys, List<object> values)
+        public bool Save2(string command, List<string> keys, List<object> values)//SAVE KOMUTU VALUE=OBJECT VERSİON
         {
             using (conn = new SqlConnection(connection))
             {
@@ -91,7 +91,7 @@ namespace YS_PROJECT
             }
             return true;
         }
-        public bool Delete(string command, List<string> keys, List<string> values)//DÜZENLEME YAP
+        public bool Delete(string command, List<string> keys, List<string> values)//DELETE KOMUTU
         {
             using (conn = new SqlConnection(connection))
             {
@@ -107,7 +107,7 @@ namespace YS_PROJECT
             }
             return true;
         }
-        public bool Update(string command, List<string> keys, List<string> values)
+        public bool Update(string command, List<string> keys, List<string> values)//UPDATE KOMUTU
         {
             using (conn = new SqlConnection(connection))
             {

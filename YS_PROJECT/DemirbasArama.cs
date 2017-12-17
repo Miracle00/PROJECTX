@@ -21,7 +21,7 @@ namespace YS_PROJECT
         DB_Operation dbo;
         Bunifu.Framework.UI.BunifuTextbox bt_arama;
         Bunifu.Framework.UI.BunifuDatepicker bd_arama;
-        private void btn_AramaKriteri_onItemSelected_2(object sender, EventArgs e)
+        private void btn_AramaKriteri_onItemSelected_2(object sender, EventArgs e)//ARAMA KRİTERİ SEÇİLİRKEN TÜM DEMİRBAŞLAR GÖRÜNSÜN.
         {
             panel_fiyat.Visible = false;
             panel_arama.Visible = true;
@@ -65,7 +65,7 @@ namespace YS_PROJECT
             }
         }
 
-        private void alimTarihArama(object sender, EventArgs e)
+        private void alimTarihArama(object sender, EventArgs e)//ALIM TARİHİ SEÇİLDİĞİNDE GELECEK OLAN VERİLER.
         {
            string gelenTarih;
             string secilenTarih = Convert.ToDateTime(bd_arama.Value).ToString("dd.MM.yyyy");
@@ -81,6 +81,9 @@ namespace YS_PROJECT
 
         private void FiyatArama(object sender, EventArgs e)//FİYAT TEXTCHANGE
         {
+            /*
+             MAX_FİYAT BOŞ OLMASIN ,MİN_FİYAT BOŞ OLMASIN, UZUNLUKLAR MAX=15,ÖRNEK SAYI 1234,3214
+             */
             if (txt_maxFiyat.Text != "" && txt_minFiyat.Text != "" && TxtKontrol.uzunlukKontrol(txt_maxFiyat.Text) == true && TxtKontrol.SayiKontrol2(txt_maxFiyat.Text) == true && TxtKontrol.uzunlukKontrol(txt_minFiyat.Text) == true && TxtKontrol.SayiKontrol2(txt_minFiyat.Text) == true)
             {
                 dataGridView1.Rows.Clear();
@@ -90,6 +93,9 @@ namespace YS_PROJECT
                         dataGridView1.Rows.Add(item);
                 }
             }
+            /*
+             MAX_FİYAT BOŞ OLMASIN ,MİN_FİYAT BOŞ OLSUN
+             */
             else if (txt_maxFiyat.Text != "" && txt_minFiyat.Text == "" && TxtKontrol.uzunlukKontrol(txt_maxFiyat.Text) == true && TxtKontrol.SayiKontrol2(txt_maxFiyat.Text))
             {
                 dataGridView1.Rows.Clear();
@@ -99,6 +105,9 @@ namespace YS_PROJECT
                         dataGridView1.Rows.Add(item);
                 }
             }
+            /*
+            MAX_FİYAT BOŞ OLSUN ,MİN_FİYAT BOŞ OLMASIN
+            */
             else if (txt_maxFiyat.Text == "" && txt_minFiyat.Text != "" && TxtKontrol.uzunlukKontrol(txt_minFiyat.Text) == true && TxtKontrol.SayiKontrol2(txt_minFiyat.Text) == true)
             {
                 dataGridView1.Rows.Clear();
@@ -109,7 +118,7 @@ namespace YS_PROJECT
                 }
             }
         }
-        private void DemirbasAdArama(object sender, EventArgs e)//DEMİRBAS AD TEXTCHANE
+        private void DemirbasAdArama(object sender, EventArgs e)//DEMİRBAS AD TEXTCHANGE
         {
             dataGridView1.Rows.Clear();
             foreach (var item in data)
@@ -120,7 +129,7 @@ namespace YS_PROJECT
                 }
             }
         }
-        private void DemirbasTurArama(object sender, EventArgs e)//DEMİRBAS TUR TEXTCHANE
+        private void DemirbasTurArama(object sender, EventArgs e)//DEMİRBAS TUR TEXTCHANGE
         {
             dataGridView1.Rows.Clear();
             foreach (var item in data)

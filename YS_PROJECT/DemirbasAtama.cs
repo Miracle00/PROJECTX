@@ -26,7 +26,7 @@ namespace YS_PROJECT
         List<String[]>demirbasTur;
         List<String[]> demirbas;
         List<String[]> odaDemirbasAtama;
-        private void btn_sec_Click(object sender, EventArgs e)
+        private void btn_sec_Click(object sender, EventArgs e)//FAKULTE-DEPARTMAN VE ODA SEÇİMİ KONTROL
         {
             if (dd_fakulteler.selectedIndex != -1 && dd_departmanlar.selectedIndex != -1 && dd_odalar.selectedIndex != -1)
             {
@@ -41,22 +41,22 @@ namespace YS_PROJECT
             }
             
         }
-        public void panel_uyari(Boolean x)
+        public void panel_uyari(Boolean x)//UYARI PANELİ
         {
-            if (x == false)
+            if (x == false)//İŞLEM HATALIYSA
             {
                 pnl_uyari.Visible = true;
                 lbl_uyari.Text = "İşlem Başarısız !";
                 pnl_uyari.BackColor = Color.OrangeRed;
             }
-            else if (x == true)
+            else if (x == true)//İŞLEM DOĞRUYSA
             {
                 pnl_uyari.Visible = true;
                 lbl_uyari.Text = "Atama başarılı.";
                 pnl_uyari.BackColor = Color.Lime;
             }
         }
-        public void FillGrid()
+        public void FillGrid()//TÜM VERİLERİ
         {
             string index = odalar[dd_odalar.selectedIndex][0].ToString();
             int oID = Convert.ToInt32(index);
