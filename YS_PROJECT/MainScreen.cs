@@ -35,7 +35,7 @@ namespace YS_PROJECT
         public void MainScreenYenileme()//Kullanıcı girişi yapıldıktran sonra ekranda olacak değişiklikler
         {
             kullanici = dbo.Select(sqlConnectionString.kullanicininAdiSoyadi, sqlConnectionString.kAS, kullaniciBilgi);
-            lbl_kullanici.Text += kullanici[0][0] + kullanici[0][1];
+            lbl_kullanici.Text +=" "+kullanici[0][0] +" "+ kullanici[0][1];
             panel1.Visible = true;
         }
 
