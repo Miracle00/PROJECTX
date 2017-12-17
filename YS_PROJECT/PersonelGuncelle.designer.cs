@@ -42,6 +42,9 @@
             this.btn_yetki = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_sil = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnl_yetki = new System.Windows.Forms.Panel();
+            this.btn_uygula = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.txt_sifre = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txt_kullaniciAdi = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -50,11 +53,8 @@
             this.cb_nKullanici = new Bunifu.Framework.UI.BunifuCheckbox();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cb_admin = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.pnl_uyari = new System.Windows.Forms.Panel();
             this.lbl_uyari = new System.Windows.Forms.Label();
-            this.btn_uygula = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_yetki.SuspendLayout();
             this.pnl_uyari.SuspendLayout();
@@ -275,6 +275,65 @@
             this.pnl_yetki.TabIndex = 56;
             this.pnl_yetki.Visible = false;
             // 
+            // btn_uygula
+            // 
+            this.btn_uygula.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_uygula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_uygula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_uygula.BorderRadius = 0;
+            this.btn_uygula.ButtonText = "UYGULA";
+            this.btn_uygula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_uygula.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_uygula.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_uygula.Iconimage = null;
+            this.btn_uygula.Iconimage_right = null;
+            this.btn_uygula.Iconimage_right_Selected = null;
+            this.btn_uygula.Iconimage_Selected = null;
+            this.btn_uygula.IconMarginLeft = 0;
+            this.btn_uygula.IconMarginRight = 0;
+            this.btn_uygula.IconRightVisible = true;
+            this.btn_uygula.IconRightZoom = 0D;
+            this.btn_uygula.IconVisible = true;
+            this.btn_uygula.IconZoom = 90D;
+            this.btn_uygula.IsTab = false;
+            this.btn_uygula.Location = new System.Drawing.Point(119, 219);
+            this.btn_uygula.Name = "btn_uygula";
+            this.btn_uygula.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_uygula.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_uygula.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_uygula.selected = false;
+            this.btn_uygula.Size = new System.Drawing.Size(250, 42);
+            this.btn_uygula.TabIndex = 58;
+            this.btn_uygula.Text = "UYGULA";
+            this.btn_uygula.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_uygula.Textcolor = System.Drawing.Color.White;
+            this.btn_uygula.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_uygula.Click += new System.EventHandler(this.btn_uygula_Click);
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(13, 129);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(446, 11);
+            this.bunifuSeparator1.TabIndex = 67;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator2.LineThickness = 1;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(13, 84);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Size = new System.Drawing.Size(446, 11);
+            this.bunifuSeparator2.TabIndex = 66;
+            this.bunifuSeparator2.Transparency = 255;
+            this.bunifuSeparator2.Vertical = false;
+            // 
             // txt_sifre
             // 
             this.txt_sifre.BackColor = System.Drawing.SystemColors.GrayText;
@@ -377,30 +436,6 @@
             this.cb_admin.TabIndex = 58;
             this.cb_admin.OnChange += new System.EventHandler(this.cb_admin_OnChange);
             // 
-            // bunifuSeparator2
-            // 
-            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator2.LineThickness = 1;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(13, 84);
-            this.bunifuSeparator2.Name = "bunifuSeparator2";
-            this.bunifuSeparator2.Size = new System.Drawing.Size(446, 11);
-            this.bunifuSeparator2.TabIndex = 66;
-            this.bunifuSeparator2.Transparency = 255;
-            this.bunifuSeparator2.Vertical = false;
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(13, 129);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(446, 11);
-            this.bunifuSeparator1.TabIndex = 67;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
             // pnl_uyari
             // 
             this.pnl_uyari.BackColor = System.Drawing.Color.OrangeRed;
@@ -421,41 +456,6 @@
             this.lbl_uyari.Size = new System.Drawing.Size(147, 20);
             this.lbl_uyari.TabIndex = 1;
             this.lbl_uyari.Text = "Personel Seçilmedi.";
-            // 
-            // btn_uygula
-            // 
-            this.btn_uygula.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_uygula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_uygula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_uygula.BorderRadius = 0;
-            this.btn_uygula.ButtonText = "UYGULA";
-            this.btn_uygula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_uygula.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_uygula.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_uygula.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_uygula.Iconimage")));
-            this.btn_uygula.Iconimage_right = null;
-            this.btn_uygula.Iconimage_right_Selected = null;
-            this.btn_uygula.Iconimage_Selected = null;
-            this.btn_uygula.IconMarginLeft = 0;
-            this.btn_uygula.IconMarginRight = 0;
-            this.btn_uygula.IconRightVisible = true;
-            this.btn_uygula.IconRightZoom = 0D;
-            this.btn_uygula.IconVisible = true;
-            this.btn_uygula.IconZoom = 90D;
-            this.btn_uygula.IsTab = false;
-            this.btn_uygula.Location = new System.Drawing.Point(119, 219);
-            this.btn_uygula.Name = "btn_uygula";
-            this.btn_uygula.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_uygula.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_uygula.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_uygula.selected = false;
-            this.btn_uygula.Size = new System.Drawing.Size(250, 42);
-            this.btn_uygula.TabIndex = 58;
-            this.btn_uygula.Text = "UYGULA";
-            this.btn_uygula.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_uygula.Textcolor = System.Drawing.Color.White;
-            this.btn_uygula.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_uygula.Click += new System.EventHandler(this.btn_uygula_Click);
             // 
             // label1
             // 
