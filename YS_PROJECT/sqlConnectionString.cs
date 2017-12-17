@@ -60,7 +60,7 @@ namespace YS_PROJECT
 
 
         // seçilen personel in id sine göre sorumlu olduğu odaların içlerindeki demirbaşları gösteren sql kodu
-        public static string personelinDemirbaslari="select o.odaAdi,dt.demirbasTuruAdi,d.demirbasAdi,oda.adet from (tblOdaDemirbasAtama oda inner join (tblDemirbas d inner join tblDemirbasTurleri dt on d.demirbasTuruID=dt.demirbasTuruID) on oda.demirbasID=d.demirbasID) inner join tblOda o  on o.odaID=oda.odaID where o.personelID= @personelID";
+        public static string personelinDemirbaslari= "select o.odaAdi,dt.demirbasTuruAdi,d.demirbasAdi,Sum(oda.adet) from (tblOdaDemirbasAtama oda inner join (tblDemirbas d inner join tblDemirbasTurleri dt on d.demirbasTuruID=dt.demirbasTuruID) on oda.demirbasID=d.demirbasID) inner join tblOda o  on o.odaID=oda.odaID where o.personelID=@personelID group by o.odaAdi,dt.demirbasTuruAdi,d.demirbasAdi";
         public static List<string> personelID = new List<string>() { "personelID" };
 
         // personel ekleme
