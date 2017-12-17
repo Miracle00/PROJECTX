@@ -24,11 +24,11 @@ namespace YS_PROJECT
             string kullaniciAdi;
             string sifre;
             //KULLANICI ADI: ÖZEL KARAKTER-DOLULUK-UZUNLUK KONTROLÜ
-            if (TxtKontrol.SayiveyaHarfKontrol(txt_kullanciAdi.Text) == true && TxtKontrol.dolulukKontrol(txt_kullanciAdi.Text) == true && TxtKontrol.uzunlukKontrol(txt_kullanciAdi.Text) == true)
+            if (TxtKontrol.SayiveyaHarfKontrol(txt_kullanciAdi.Text) == false && TxtKontrol.dolulukKontrol(txt_kullanciAdi.Text) == true && TxtKontrol.uzunlukKontrol(txt_kullanciAdi.Text) == true)
             {
                 kullaniciAdi = txt_kullanciAdi.Text;
                 //ŞİFRE: ÖZEL KARAKTER-DOLULUK-UZUNLUK KONTROLÜ
-                if (TxtKontrol.SayiveyaHarfKontrol(txt_sifre.Text) == true && TxtKontrol.dolulukKontrol(txt_sifre.Text) == true && TxtKontrol.uzunlukKontrol(txt_sifre.Text) == true)
+                if (TxtKontrol.SayiveyaHarfKontrol(txt_sifre.Text) == false && TxtKontrol.dolulukKontrol(txt_sifre.Text) == true && TxtKontrol.uzunlukKontrol(txt_sifre.Text) == true)
                 {
                     sifre = txt_sifre.Text;
                     baglan(kullaniciAdi, sifre);

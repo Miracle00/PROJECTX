@@ -29,7 +29,7 @@ namespace YS_PROJECT
             if (dd_departmanlar.selectedIndex != -1)
             {
                 string dAdi = dd_departmanlar.selectedValue;
-                if (TxtKontrol.dolulukKontrol(txt_OdaAd.Text) == true && TxtKontrol.SayiveyaHarfKontrol(txt_OdaAd.Text) == true && TxtKontrol.uzunlukKontrol(txt_OdaAd.Text) == true)
+                if (TxtKontrol.dolulukKontrol(txt_OdaAd.Text) == true && TxtKontrol.SayiveyaHarfKontrol(txt_OdaAd.Text) == false && TxtKontrol.uzunlukKontrol(txt_OdaAd.Text) == true)
                 {
                     string oAdi = txt_OdaAd.Text;
                     Boolean odaKontrol = false;

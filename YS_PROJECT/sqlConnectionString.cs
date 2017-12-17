@@ -18,6 +18,9 @@ namespace YS_PROJECT
         public static string odaIsimleri = "SELECT * FROM tblOda WHERE departmanID=@departmanID";
         public static List<string> odaIsimleriParametreler = new List<string>() { "departmanID" };
 
+        public static string odaIsimleri2 = "SELECT * FROM tblOda WHERE personelID=@personelID";
+        public static List<string> odaIsimleriParametreler2 = new List<string>() { "personelID" };
+
         public static string personeller = "SELECT * FROM tblPersonel";
 
         public static string demirbaslar = "SELECT d.demirbasAdi,dt.demirbasTuruAdi,d.fiyat,d.alimTarihi,d.adet FROM tblDemirbas d INNER JOIN tblDemirbasTurleri dt ON d.demirbasTuruID=dt.demirbasTuruID";
@@ -44,7 +47,13 @@ namespace YS_PROJECT
 
         public static string odaGuncelle2 = "update tblOda set odaAdi=@odaAdi,departmanID=@departmanID,personelID=@personelID where odaID=@odaID";
         public static List<string> odaGuncelleParam2 = new List<string>() { "odaAdi", "departmanID", "personelID", "odaID" };
-        
+
+        public static string odaGuncelle3 = "update tblOda set personelID=NULL WHERE odaID=@odaID";
+        public static List<string> odaGuncelleParam3 = new List<string>() {"odaID" };
+
+        public static string odaGuncelle4 = "update tblOda set personelID=@personelID WHERE odaID=@odaID";
+        public static List<string> odaGuncelleParam4 = new List<string>() { "personelID","odaID" };
+
 
         public static string odaDemirbasGetir= "select dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama,SUM(oda.adet) from (tblOdaDemirbasAtama oda inner join (tblDemirbas d inner join tblDemirbasTurleri dt on d.demirbasTuruID = dt.demirbasTuruID) on oda.demirbasID=d.demirbasID) inner join tblOda o  on o.odaID=oda.odaID where o.odaID=@odaID GROUP BY d.demirbasID,dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama";
         public static List<string> odaDemirbasGetirParam = new List<string>() { "odaID" };
@@ -73,5 +82,11 @@ namespace YS_PROJECT
 
         public static string odaDemirbasGetir3 = " select d.fakulteID,d.departmanID,d.demirbasTuruID,d.demirbasID,dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama,oda.adet from (tblOdaDemirbasAtama oda inner join (tblDemirbas d inner join tblDemirbasTurleri dt on d.demirbasTuruID = dt.demirbasTuruID) on oda.demirbasID=d.demirbasID) inner join tblOda o  on o.odaID=oda.odaID where o.odaID=@odaID";
         public static List<string> odaDemirbasGetirParam3 = new List<string>() { "odaID" };
+
+        public static string personelSil = "DELETE FROM tblPersonel where personelID=@personelID";
+        public static List<string> personelSilParametreler = new List<string>() { "personelID" };
+
+        public static string kullanciSil = "DELETE FROM tblKullanicilar where personelID=@personelID";
+        public static List<string> kullaniciSilParametreler = new List<string>() { "personelID" };
     }
 }

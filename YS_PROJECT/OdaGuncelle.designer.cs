@@ -42,15 +42,17 @@
             this.txt_GuncelOdalar = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btn_uygula = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dd_GuncelPersonel = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dd_guncelDepartman = new Bunifu.Framework.UI.BunifuDropdown();
+            this.dd_GuncelPersonel = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pnl_uyari = new System.Windows.Forms.Panel();
             this.lbl_uyari = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_personelUygula = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.pnl_uyari.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuCustomLabel1
@@ -199,14 +201,11 @@
             this.panel1.Controls.Add(this.txt_GuncelOdalar);
             this.panel1.Controls.Add(this.btn_uygula);
             this.panel1.Controls.Add(this.bunifuCustomLabel2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dd_GuncelPersonel);
             this.panel1.Controls.Add(this.bunifuCustomLabel5);
             this.panel1.Controls.Add(this.dd_guncelDepartman);
-            this.panel1.Controls.Add(this.bunifuCustomLabel4);
-            this.panel1.Location = new System.Drawing.Point(79, 156);
+            this.panel1.Location = new System.Drawing.Point(18, 138);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(726, 301);
+            this.panel1.Size = new System.Drawing.Size(459, 301);
             this.panel1.TabIndex = 74;
             this.panel1.Visible = false;
             // 
@@ -221,7 +220,7 @@
             this.txt_GuncelOdalar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_GuncelOdalar.ForeColor = System.Drawing.Color.White;
             this.txt_GuncelOdalar.isPassword = false;
-            this.txt_GuncelOdalar.Location = new System.Drawing.Point(249, 117);
+            this.txt_GuncelOdalar.Location = new System.Drawing.Point(234, 75);
             this.txt_GuncelOdalar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_GuncelOdalar.Name = "txt_GuncelOdalar";
             this.txt_GuncelOdalar.Size = new System.Drawing.Size(214, 43);
@@ -250,7 +249,7 @@
             this.btn_uygula.IconVisible = true;
             this.btn_uygula.IconZoom = 90D;
             this.btn_uygula.IsTab = false;
-            this.btn_uygula.Location = new System.Drawing.Point(249, 190);
+            this.btn_uygula.Location = new System.Drawing.Point(106, 126);
             this.btn_uygula.Name = "btn_uygula";
             this.btn_uygula.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btn_uygula.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -268,44 +267,17 @@
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(24, 88);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(5, 46);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(170, 24);
             this.bunifuCustomLabel2.TabIndex = 71;
             this.bunifuCustomLabel2.Text = "DEPARTMAN İSMİ";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(78, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(621, 15);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "! Güncellenmesini istediğiniz oda bilgilerini yukarıdaki bölümden seçerek,aşağıda" +
-    "ki alanlarla güncelleyebilirsiniz.";
-            // 
-            // dd_GuncelPersonel
-            // 
-            this.dd_GuncelPersonel.BackColor = System.Drawing.Color.White;
-            this.dd_GuncelPersonel.BorderRadius = 3;
-            this.dd_GuncelPersonel.DisabledColor = System.Drawing.Color.Gray;
-            this.dd_GuncelPersonel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dd_GuncelPersonel.ForeColor = System.Drawing.Color.White;
-            this.dd_GuncelPersonel.Items = new string[0];
-            this.dd_GuncelPersonel.Location = new System.Drawing.Point(470, 117);
-            this.dd_GuncelPersonel.Name = "dd_GuncelPersonel";
-            this.dd_GuncelPersonel.NomalColor = System.Drawing.SystemColors.GrayText;
-            this.dd_GuncelPersonel.onHoverColor = System.Drawing.Color.Gray;
-            this.dd_GuncelPersonel.selectedIndex = -1;
-            this.dd_GuncelPersonel.Size = new System.Drawing.Size(215, 43);
-            this.dd_GuncelPersonel.TabIndex = 68;
-            // 
             // bunifuCustomLabel5
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(245, 90);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(230, 48);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(92, 24);
             this.bunifuCustomLabel5.TabIndex = 67;
@@ -319,7 +291,7 @@
             this.dd_guncelDepartman.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dd_guncelDepartman.ForeColor = System.Drawing.Color.White;
             this.dd_guncelDepartman.Items = new string[0];
-            this.dd_guncelDepartman.Location = new System.Drawing.Point(28, 117);
+            this.dd_guncelDepartman.Location = new System.Drawing.Point(9, 75);
             this.dd_guncelDepartman.Name = "dd_guncelDepartman";
             this.dd_guncelDepartman.NomalColor = System.Drawing.SystemColors.GrayText;
             this.dd_guncelDepartman.onHoverColor = System.Drawing.Color.Gray;
@@ -327,11 +299,27 @@
             this.dd_guncelDepartman.Size = new System.Drawing.Size(215, 43);
             this.dd_guncelDepartman.TabIndex = 66;
             // 
+            // dd_GuncelPersonel
+            // 
+            this.dd_GuncelPersonel.BackColor = System.Drawing.Color.White;
+            this.dd_GuncelPersonel.BorderRadius = 3;
+            this.dd_GuncelPersonel.DisabledColor = System.Drawing.Color.Gray;
+            this.dd_GuncelPersonel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dd_GuncelPersonel.ForeColor = System.Drawing.Color.White;
+            this.dd_GuncelPersonel.Items = new string[0];
+            this.dd_GuncelPersonel.Location = new System.Drawing.Point(129, 75);
+            this.dd_GuncelPersonel.Name = "dd_GuncelPersonel";
+            this.dd_GuncelPersonel.NomalColor = System.Drawing.SystemColors.GrayText;
+            this.dd_GuncelPersonel.onHoverColor = System.Drawing.Color.Gray;
+            this.dd_GuncelPersonel.selectedIndex = -1;
+            this.dd_GuncelPersonel.Size = new System.Drawing.Size(215, 43);
+            this.dd_GuncelPersonel.TabIndex = 68;
+            // 
             // bunifuCustomLabel4
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(466, 90);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(155, 46);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(153, 24);
             this.bunifuCustomLabel4.TabIndex = 65;
@@ -358,10 +346,57 @@
             this.lbl_uyari.TabIndex = 1;
             this.lbl_uyari.Text = "İşlem Başarısız !";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btn_personelUygula);
+            this.panel2.Controls.Add(this.dd_GuncelPersonel);
+            this.panel2.Controls.Add(this.bunifuCustomLabel4);
+            this.panel2.Location = new System.Drawing.Point(483, 138);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(397, 301);
+            this.panel2.TabIndex = 77;
+            this.panel2.Visible = false;
+            // 
+            // btn_personelUygula
+            // 
+            this.btn_personelUygula.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_personelUygula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_personelUygula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_personelUygula.BorderRadius = 0;
+            this.btn_personelUygula.ButtonText = "UYGULA";
+            this.btn_personelUygula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_personelUygula.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_personelUygula.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_personelUygula.Iconimage = null;
+            this.btn_personelUygula.Iconimage_right = null;
+            this.btn_personelUygula.Iconimage_right_Selected = null;
+            this.btn_personelUygula.Iconimage_Selected = null;
+            this.btn_personelUygula.IconMarginLeft = 0;
+            this.btn_personelUygula.IconMarginRight = 0;
+            this.btn_personelUygula.IconRightVisible = true;
+            this.btn_personelUygula.IconRightZoom = 0D;
+            this.btn_personelUygula.IconVisible = true;
+            this.btn_personelUygula.IconZoom = 90D;
+            this.btn_personelUygula.IsTab = false;
+            this.btn_personelUygula.Location = new System.Drawing.Point(129, 126);
+            this.btn_personelUygula.Name = "btn_personelUygula";
+            this.btn_personelUygula.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_personelUygula.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_personelUygula.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_personelUygula.selected = false;
+            this.btn_personelUygula.Size = new System.Drawing.Size(215, 43);
+            this.btn_personelUygula.TabIndex = 77;
+            this.btn_personelUygula.Text = "UYGULA";
+            this.btn_personelUygula.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_personelUygula.Textcolor = System.Drawing.Color.White;
+            this.btn_personelUygula.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_personelUygula.Click += new System.EventHandler(this.btn_personelUygula_Click);
+            // 
             // OdaGuncelle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnl_uyari);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_sec);
@@ -380,6 +415,8 @@
             this.panel1.PerformLayout();
             this.pnl_uyari.ResumeLayout(false);
             this.pnl_uyari.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,7 +434,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_sec;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuDropdown dd_GuncelPersonel;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private Bunifu.Framework.UI.BunifuDropdown dd_guncelDepartman;
@@ -406,5 +442,7 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox txt_GuncelOdalar;
         private System.Windows.Forms.Panel pnl_uyari;
         private System.Windows.Forms.Label lbl_uyari;
+        private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_personelUygula;
     }
 }

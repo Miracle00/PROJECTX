@@ -178,7 +178,7 @@ namespace YS_PROJECT
             {
                 if (TxtKontrol.SayiKontrol(txt_adet.Text) && TxtKontrol.dolulukKontrol(txt_adet.Text) && TxtKontrol.uzunlukKontrol2(txt_adet.Text))
                 {
-                    if (Convert.ToInt16(txt_stokMiktari.Text) > Convert.ToInt16(txt_adet.Text))
+                    if (Convert.ToInt16(txt_stokMiktari.Text) > Convert.ToInt32(txt_adet.Text))
                     {                 
                         string secilenDemirbasID = demirbas[dd_demirbaslar.selectedIndex][0];
                         string secilenOdaID = odalar[dd_odalar.selectedIndex][0];

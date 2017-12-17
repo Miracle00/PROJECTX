@@ -31,8 +31,10 @@ namespace YS_PROJECT
             if (dd_fakulteler.selectedIndex != -1 && dd_departmanlar.selectedIndex != -1 && dd_odalar.selectedIndex != -1)
             {
                 panel1.Visible = true;
+                panel2.Visible = true;
             }
             else
+
                 pnl_uyari.Visible = true;
         }
 
@@ -61,23 +63,12 @@ namespace YS_PROJECT
 
             if (kontrol == false)
             {
-                if (dd_odalar.selectedIndex != -1 && dd_GuncelPersonel.selectedIndex == -1 && departman != "" && Oda != "" && TxtKontrol.SayiveyaHarfKontrol(Oda.ToString()) == true && TxtKontrol.uzunlukKontrol(Oda.ToString()) == true)
+                if (dd_odalar.selectedIndex != -1 && departman != "" && Oda != "" && TxtKontrol.SayiveyaHarfKontrol(Oda.ToString()) == false && TxtKontrol.uzunlukKontrol(Oda.ToString()) == true)
                 {
                     gbilgi.Add(Oda);
                     gbilgi.Add(departman);
                     gbilgi.Add(odalar[dd_odalar.selectedIndex][0]);//odanın id si
                     if (dbo.Update(sqlConnectionString.odaGuncelle, sqlConnectionString.odaGuncelleParam, gbilgi))
-                    {
-                        Update();
-                    }
-                }
-                else if (dd_odalar.selectedIndex != -1 && dd_GuncelPersonel.selectedIndex >= 0 && departman != "" && Oda != "" && TxtKontrol.SayiveyaHarfKontrol(Oda.ToString()) == true && TxtKontrol.uzunlukKontrol(Oda.ToString()) == true)
-                {
-                    gbilgi.Add(Oda);
-                    gbilgi.Add(departman);
-                    gbilgi.Add(personeller[dd_GuncelPersonel.selectedIndex][0].ToString());
-                    gbilgi.Add(odalar[dd_odalar.selectedIndex][0]);//odanın id si
-                    if (dbo.Update(sqlConnectionString.odaGuncelle2, sqlConnectionString.odaGuncelleParam2, gbilgi))
                     {
                         Update();
                     }
@@ -93,10 +84,12 @@ namespace YS_PROJECT
         {
             panel_uyari(true);
             panel1.Visible = false;
+            panel2.Visible = false;
             dd_departmanlar.Clear();
             dd_fakulteler.Clear();
             dd_odalar.Clear();
             FakulteleriGetir();
+
         }
         public void panel_uyari(Boolean x)
         {
@@ -202,6 +195,32 @@ namespace YS_PROJECT
         private void txt_GuncelOdalar_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar);
+        }
+
+        private void btn_personelUygula_Click(object sender, EventArgs e)
+        {
+            gbilgi = new List<string>();
+            string departman;
+            if (dd_guncelDepartman.selectedIndex != -1)     //güncel departman      
+                departman = departmanlar[dd_guncelDepartman.selectedIndex][0];
+            else if (dd_departmanlar.selectedIndex != -1)
+                departman = departmanlar[dd_departmanlar.selectedIndex][0];
+            else
+                departman = "";
+
+            if (dd_odalar.selectedIndex != -1 && dd_GuncelPersonel.selectedIndex >= 0 && departman != "")
+            {
+                gbilgi.Add(personeller[dd_GuncelPersonel.selectedIndex][0].ToString());
+                gbilgi.Add(odalar[dd_odalar.selectedIndex][0]);//odanın id si
+                if (dbo.Update(sqlConnectionString.odaGuncelle4, sqlConnectionString.odaGuncelleParam4, gbilgi))
+                {
+                    Update();
+                }
+            }
+            else
+            {
+                panel_uyari(false);
+            }
         }
     }
 }

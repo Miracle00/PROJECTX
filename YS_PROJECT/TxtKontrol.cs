@@ -13,7 +13,8 @@ namespace YS_PROJECT
        
         public static Boolean SayiveyaHarfKontrol(string gelenDeger)
         {
-            string Desen = @"^\w*$";
+            //string Desen = @"^\w*";
+            string Desen = @"[^a-z0-9ığüşçö]";
             reg = new Regex(Desen);
             if (reg.IsMatch(gelenDeger))
                 return true;
@@ -53,7 +54,7 @@ namespace YS_PROJECT
         }
         public static Boolean KarakterKontrol(string gelenDeger)
         {
-            string Desen = @"[^A-Za-z]";
+            string Desen = @"[^a-zığüşçö]";
             reg = new Regex(Desen);
             if (reg.IsMatch(gelenDeger))
                 return true;
