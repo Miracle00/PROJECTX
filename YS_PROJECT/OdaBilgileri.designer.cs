@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OdaBilgileri));
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
@@ -44,10 +43,12 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_uygula = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtPersonelAd = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.pnl_uyari = new System.Windows.Forms.Panel();
             this.lbl_uyari = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.btn_cikti = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_uygula = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnl_uyari.SuspendLayout();
             this.SuspendLayout();
@@ -207,41 +208,6 @@
             this.Column4.HeaderText = "Adet";
             this.Column4.Name = "Column4";
             // 
-            // btn_uygula
-            // 
-            this.btn_uygula.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_uygula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_uygula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_uygula.BorderRadius = 0;
-            this.btn_uygula.ButtonText = "ÇIKTI AL";
-            this.btn_uygula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_uygula.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_uygula.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_uygula.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_uygula.Iconimage")));
-            this.btn_uygula.Iconimage_right = null;
-            this.btn_uygula.Iconimage_right_Selected = null;
-            this.btn_uygula.Iconimage_Selected = null;
-            this.btn_uygula.IconMarginLeft = 0;
-            this.btn_uygula.IconMarginRight = 0;
-            this.btn_uygula.IconRightVisible = true;
-            this.btn_uygula.IconRightZoom = 0D;
-            this.btn_uygula.IconVisible = true;
-            this.btn_uygula.IconZoom = 90D;
-            this.btn_uygula.IsTab = false;
-            this.btn_uygula.Location = new System.Drawing.Point(324, 480);
-            this.btn_uygula.Name = "btn_uygula";
-            this.btn_uygula.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_uygula.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_uygula.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_uygula.selected = false;
-            this.btn_uygula.Size = new System.Drawing.Size(215, 48);
-            this.btn_uygula.TabIndex = 75;
-            this.btn_uygula.Text = "ÇIKTI AL";
-            this.btn_uygula.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_uygula.Textcolor = System.Drawing.Color.White;
-            this.btn_uygula.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_uygula.Click += new System.EventHandler(this.btn_uygula_Click);
-            // 
             // txtPersonelAd
             // 
             this.txtPersonelAd.BackColor = System.Drawing.Color.LightGray;
@@ -283,10 +249,86 @@
             this.lbl_uyari.TabIndex = 1;
             this.lbl_uyari.Text = "İşlem Başarısız !";
             // 
+            // printDocument1
+            // 
+            this.printDocument1.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument1_BeginPrint);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // btn_cikti
+            // 
+            this.btn_cikti.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_cikti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_cikti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_cikti.BorderRadius = 0;
+            this.btn_cikti.ButtonText = "ÇIKTI AL";
+            this.btn_cikti.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cikti.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_cikti.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_cikti.Iconimage = global::YS_PROJECT.Properties.Resources.printer;
+            this.btn_cikti.Iconimage_right = null;
+            this.btn_cikti.Iconimage_right_Selected = null;
+            this.btn_cikti.Iconimage_Selected = null;
+            this.btn_cikti.IconMarginLeft = 0;
+            this.btn_cikti.IconMarginRight = 0;
+            this.btn_cikti.IconRightVisible = true;
+            this.btn_cikti.IconRightZoom = 0D;
+            this.btn_cikti.IconVisible = true;
+            this.btn_cikti.IconZoom = 90D;
+            this.btn_cikti.IsTab = false;
+            this.btn_cikti.Location = new System.Drawing.Point(178, 480);
+            this.btn_cikti.Name = "btn_cikti";
+            this.btn_cikti.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_cikti.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_cikti.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_cikti.selected = false;
+            this.btn_cikti.Size = new System.Drawing.Size(215, 48);
+            this.btn_cikti.TabIndex = 78;
+            this.btn_cikti.Text = "ÇIKTI AL";
+            this.btn_cikti.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_cikti.Textcolor = System.Drawing.Color.White;
+            this.btn_cikti.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cikti.Click += new System.EventHandler(this.btn_cikti_Click);
+            // 
+            // btn_uygula
+            // 
+            this.btn_uygula.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_uygula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_uygula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_uygula.BorderRadius = 0;
+            this.btn_uygula.ButtonText = "EXCELE AKTAR";
+            this.btn_uygula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_uygula.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_uygula.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_uygula.Iconimage = global::YS_PROJECT.Properties.Resources.excel;
+            this.btn_uygula.Iconimage_right = null;
+            this.btn_uygula.Iconimage_right_Selected = null;
+            this.btn_uygula.Iconimage_Selected = null;
+            this.btn_uygula.IconMarginLeft = 0;
+            this.btn_uygula.IconMarginRight = 0;
+            this.btn_uygula.IconRightVisible = true;
+            this.btn_uygula.IconRightZoom = 0D;
+            this.btn_uygula.IconVisible = true;
+            this.btn_uygula.IconZoom = 90D;
+            this.btn_uygula.IsTab = false;
+            this.btn_uygula.Location = new System.Drawing.Point(468, 480);
+            this.btn_uygula.Name = "btn_uygula";
+            this.btn_uygula.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_uygula.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_uygula.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_uygula.selected = false;
+            this.btn_uygula.Size = new System.Drawing.Size(215, 48);
+            this.btn_uygula.TabIndex = 75;
+            this.btn_uygula.Text = "EXCELE AKTAR";
+            this.btn_uygula.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_uygula.Textcolor = System.Drawing.Color.White;
+            this.btn_uygula.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_uygula.Click += new System.EventHandler(this.btn_uygula_Click);
+            // 
             // OdaBilgileri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_cikti);
             this.Controls.Add(this.pnl_uyari);
             this.Controls.Add(this.txtPersonelAd);
             this.Controls.Add(this.btn_uygula);
@@ -331,5 +373,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_cikti;
     }
 }

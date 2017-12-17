@@ -262,11 +262,13 @@
     <Content Include="Resources\demirbas.png" />
     <Content Include="Resources\demirbas1.png" />
     <Content Include="Resources\demirbas2.png" />
+    <None Include="Resources\excel.png" />
     <Content Include="Resources\log.png" />
     <Content Include="Resources\log1.png" />
     <Content Include="Resources\log2.png" />
     <Content Include="Resources\logo2.png" />
     <Content Include="Resources\personel.png" />
+    <None Include="Resources\printer.png" />
     <Content Include="Resources\room.png" />
     <Content Include="Resources\shopping.png" />
   </ItemGroup>
