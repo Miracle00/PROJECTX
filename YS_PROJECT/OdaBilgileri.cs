@@ -95,37 +95,41 @@ namespace YS_PROJECT
             }
 
             List<string[]> data = new List<string[]>();
-            data=dbo.Select(sqlConnectionString.odaDemirbasGetir3, sqlConnectionString.odaDemirbasGetirParam3, sOdaID);
-
-            FillGrid(data);
+            List<string[]> dbkodu = new List<string[]>();
+            data =dbo.Select(sqlConnectionString.odaDemirbasGetir3, sqlConnectionString.odaDemirbasGetirParam3, sOdaID);
+            dbkodu = dbo.Select(sqlConnectionString.odgdbk, sqlConnectionString.odaDemirbasGetirParam3, sOdaID);
+            FillGrid(dbkodu,data);
             pnl_uyari.Visible = false;
         }
-        public void FillGrid(List<string[]> d)
+        public void FillGrid(List<string[]> k,List<string[]> d)
         {
             dataGridView1.Rows.Clear();
-           
-            List<string[]> ltemp = new List<string[]>();
-            foreach (string[] item in d)
-            { string[] tmp = new string[5];
-                
-                    string t="";
-                    t += item[0].ToString();
-                    t += item[1].ToString();
-                    t += item[2].ToString();
-                    t += item[3].ToString();
-                tmp[0] = t;
-                tmp[1] = item[4];
-                tmp[2] = item[5];
-                tmp[3] = item[6];
-                tmp[4] = item[7];
-                ltemp.Add(tmp);
-
+                     
+            string[] tmp = new string[k.Count];
+            string[] tmp2 = new string[5];
+            int i = 0;
+            foreach (string[] item2 in k)
+            {                
+                string t = "";
+                t += item2[0].ToString();
+                t += item2[1].ToString();
+                t += item2[2].ToString();
+                t += item2[3].ToString();
+                tmp[i] = t;
+                i += 1;
             }
-
-            foreach (string[] rowArray in ltemp)
+            i = 0;
+            foreach (string[] item in d)
             {
-                dataGridView1.Rows.Add(rowArray);
+                tmp2[0] = tmp[i];
+                tmp2[1] = item[0];
+                tmp2[2] = item[1];
+                tmp2[3] = item[2];
+                tmp2[4] = item[3];
+
                 
+                dataGridView1.Rows.Add(tmp2);
+                i += 1;
             }
         }
 

@@ -10,8 +10,8 @@ namespace YS_PROJECT
     public class DB_Operation
     {
         SqlConnection conn;
-        public static string connection = @"Data Source=DESKTOP-3RES620;Initial Catalog=StokDB;Integrated Security=True";
-       // public static string connection = @"Data Source=TOSHIBAPC\SQLEXPRESS;Initial Catalog=StokDB;Integrated Security=True";
+       // public static string connection = @"Data Source=DESKTOP-3RES620;Initial Catalog=StokDB;Integrated Security=True";
+        public static string connection = @"Data Source=TOSHIBAPC\SQLEXPRESS;Initial Catalog=StokDB;Integrated Security=True";
         public List<string[]> Select(string command, List<string> keys, List<string> values)
         {
             SqlConnection conn = new SqlConnection(connection);
