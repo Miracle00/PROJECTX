@@ -102,5 +102,15 @@ namespace YS_PROJECT
             login lgn = new login();
             lgn.Show();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+              lblTime.Text ="  TARİH : "+DateTime.Now.ToLongDateString()+"\n"+ "   SAAT : " + DateTime.Now.ToLongTimeString();
+        }
+
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
     }
 }

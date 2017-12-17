@@ -30,20 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_cikis = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_kullanici = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btn_cikis = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Personel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_odaIslem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_demirbasIslem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_satinAlim = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblTime = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,62 +67,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 622);
             this.panel1.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel6.Location = new System.Drawing.Point(1, 583);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(250, 38);
-            this.panel6.TabIndex = 7;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel4.Controls.Add(this.lbl_kullanici);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(1, 160);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(250, 38);
-            this.panel4.TabIndex = 6;
-            // 
-            // lbl_kullanici
-            // 
-            this.lbl_kullanici.AutoSize = true;
-            this.lbl_kullanici.ForeColor = System.Drawing.Color.White;
-            this.lbl_kullanici.Location = new System.Drawing.Point(101, 17);
-            this.lbl_kullanici.Name = "lbl_kullanici";
-            this.lbl_kullanici.Size = new System.Drawing.Size(36, 13);
-            this.lbl_kullanici.TabIndex = 1;
-            this.lbl_kullanici.Text = "Sayın:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(87, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HOŞGELDİNİZ";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 159);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(250, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(899, 622);
-            this.panel5.TabIndex = 2;
             // 
             // btn_cikis
             // 
@@ -156,6 +102,46 @@
             this.btn_cikis.Textcolor = System.Drawing.Color.White;
             this.btn_cikis.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cikis.Click += new System.EventHandler(this.btn_cikis_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel6.Controls.Add(this.lblTime);
+            this.panel6.Location = new System.Drawing.Point(1, 583);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(250, 38);
+            this.panel6.TabIndex = 7;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel4.Controls.Add(this.lbl_kullanici);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Location = new System.Drawing.Point(1, 160);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(250, 38);
+            this.panel4.TabIndex = 6;
+            // 
+            // lbl_kullanici
+            // 
+            this.lbl_kullanici.AutoSize = true;
+            this.lbl_kullanici.ForeColor = System.Drawing.Color.White;
+            this.lbl_kullanici.Location = new System.Drawing.Point(101, 17);
+            this.lbl_kullanici.Name = "lbl_kullanici";
+            this.lbl_kullanici.Size = new System.Drawing.Size(36, 13);
+            this.lbl_kullanici.TabIndex = 1;
+            this.lbl_kullanici.Text = "Sayın:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(87, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "HOŞGELDİNİZ";
             // 
             // btn_Personel
             // 
@@ -297,6 +283,16 @@
             this.btn_satinAlim.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_satinAlim.Click += new System.EventHandler(this.btn_satinAlim_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(250, 159);
+            this.panel2.TabIndex = 1;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::YS_PROJECT.Properties.Resources.logo2;
@@ -306,6 +302,28 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(250, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(899, 622);
+            this.panel5.TabIndex = 2;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(20, 4);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(0, 13);
+            this.lblTime.TabIndex = 2;
             // 
             // MainScreen
             // 
@@ -318,7 +336,10 @@
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainScreen_Load);
             this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -343,6 +364,7 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuFlatButton btn_cikis;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblTime;
     }
 }
 
