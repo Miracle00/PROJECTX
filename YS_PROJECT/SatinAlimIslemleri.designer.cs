@@ -40,7 +40,6 @@
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txt_aciklama = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.dp_alimTarihi = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txt_demirbasFiyat = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -50,6 +49,10 @@
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuSeparator4 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.pnl_uyari = new System.Windows.Forms.Panel();
+            this.lbl_uyari = new System.Windows.Forms.Label();
+            this.dp_alimTarihi = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.pnl_uyari.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuCustomLabel1
@@ -123,7 +126,7 @@
             // 
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(129, 124);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(187, 124);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(162, 24);
             this.bunifuCustomLabel3.TabIndex = 40;
@@ -137,7 +140,7 @@
             this.dd_demirbasTur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dd_demirbasTur.ForeColor = System.Drawing.Color.White;
             this.dd_demirbasTur.Items = new string[0];
-            this.dd_demirbasTur.Location = new System.Drawing.Point(64, 153);
+            this.dd_demirbasTur.Location = new System.Drawing.Point(133, 153);
             this.dd_demirbasTur.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dd_demirbasTur.Name = "dd_demirbasTur";
             this.dd_demirbasTur.NomalColor = System.Drawing.SystemColors.GrayText;
@@ -157,10 +160,10 @@
             this.txt_demirbasAdi.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_demirbasAdi.ForeColor = System.Drawing.Color.White;
             this.txt_demirbasAdi.isPassword = false;
-            this.txt_demirbasAdi.Location = new System.Drawing.Point(357, 153);
+            this.txt_demirbasAdi.Location = new System.Drawing.Point(435, 153);
             this.txt_demirbasAdi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_demirbasAdi.Name = "txt_demirbasAdi";
-            this.txt_demirbasAdi.Size = new System.Drawing.Size(444, 43);
+            this.txt_demirbasAdi.Size = new System.Drawing.Size(285, 43);
             this.txt_demirbasAdi.TabIndex = 42;
             this.txt_demirbasAdi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -201,19 +204,6 @@
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(205, 24);
             this.bunifuCustomLabel5.TabIndex = 43;
             this.bunifuCustomLabel5.Text = "DEMİRBAS AÇIKLAMA";
-            // 
-            // dp_alimTarihi
-            // 
-            this.dp_alimTarihi.BackColor = System.Drawing.SystemColors.GrayText;
-            this.dp_alimTarihi.BorderRadius = 0;
-            this.dp_alimTarihi.ForeColor = System.Drawing.Color.White;
-            this.dp_alimTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dp_alimTarihi.FormatCustom = null;
-            this.dp_alimTarihi.Location = new System.Drawing.Point(64, 261);
-            this.dp_alimTarihi.Name = "dp_alimTarihi";
-            this.dp_alimTarihi.Size = new System.Drawing.Size(286, 42);
-            this.dp_alimTarihi.TabIndex = 45;
-            this.dp_alimTarihi.Value = new System.DateTime(2017, 12, 11, 16, 21, 45, 95);
             // 
             // bunifuCustomLabel6
             // 
@@ -326,13 +316,13 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(63, 529);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(241, 518);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(286, 48);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(354, 48);
             this.bunifuFlatButton1.TabIndex = 53;
             this.bunifuFlatButton1.Text = "SATIN AL";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -352,10 +342,52 @@
             this.bunifuSeparator4.Transparency = 255;
             this.bunifuSeparator4.Vertical = false;
             // 
+            // pnl_uyari
+            // 
+            this.pnl_uyari.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnl_uyari.Controls.Add(this.lbl_uyari);
+            this.pnl_uyari.Location = new System.Drawing.Point(241, 572);
+            this.pnl_uyari.Name = "pnl_uyari";
+            this.pnl_uyari.Size = new System.Drawing.Size(354, 34);
+            this.pnl_uyari.TabIndex = 76;
+            this.pnl_uyari.Visible = false;
+            // 
+            // lbl_uyari
+            // 
+            this.lbl_uyari.AutoSize = true;
+            this.lbl_uyari.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbl_uyari.ForeColor = System.Drawing.Color.White;
+            this.lbl_uyari.Location = new System.Drawing.Point(112, 7);
+            this.lbl_uyari.Name = "lbl_uyari";
+            this.lbl_uyari.Size = new System.Drawing.Size(123, 20);
+            this.lbl_uyari.TabIndex = 1;
+            this.lbl_uyari.Text = "İşlem Başarısız !";
+            // 
+            // dp_alimTarihi
+            // 
+            this.dp_alimTarihi.BackColor = System.Drawing.SystemColors.GrayText;
+            this.dp_alimTarihi.BorderColorFocused = System.Drawing.Color.Empty;
+            this.dp_alimTarihi.BorderColorIdle = System.Drawing.Color.Empty;
+            this.dp_alimTarihi.BorderColorMouseHover = System.Drawing.Color.Empty;
+            this.dp_alimTarihi.BorderThickness = 3;
+            this.dp_alimTarihi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.dp_alimTarihi.Enabled = false;
+            this.dp_alimTarihi.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dp_alimTarihi.ForeColor = System.Drawing.Color.White;
+            this.dp_alimTarihi.isPassword = false;
+            this.dp_alimTarihi.Location = new System.Drawing.Point(64, 262);
+            this.dp_alimTarihi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dp_alimTarihi.Name = "dp_alimTarihi";
+            this.dp_alimTarihi.Size = new System.Drawing.Size(285, 39);
+            this.dp_alimTarihi.TabIndex = 77;
+            this.dp_alimTarihi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // SatinAlimIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dp_alimTarihi);
+            this.Controls.Add(this.pnl_uyari);
             this.Controls.Add(this.bunifuSeparator4);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.txt_demirbasAdet);
@@ -365,7 +397,6 @@
             this.Controls.Add(this.txt_demirbasFiyat);
             this.Controls.Add(this.bunifuCustomLabel7);
             this.Controls.Add(this.bunifuCustomLabel6);
-            this.Controls.Add(this.dp_alimTarihi);
             this.Controls.Add(this.txt_aciklama);
             this.Controls.Add(this.bunifuCustomLabel5);
             this.Controls.Add(this.txt_demirbasAdi);
@@ -379,6 +410,9 @@
             this.Controls.Add(this.dd_fakulteler);
             this.Name = "SatinAlimIslemleri";
             this.Size = new System.Drawing.Size(899, 622);
+            this.Load += new System.EventHandler(this.SatinAlimIslemleri_Load);
+            this.pnl_uyari.ResumeLayout(false);
+            this.pnl_uyari.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,7 +431,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.Framework.UI.BunifuMetroTextbox txt_aciklama;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuDatepicker dp_alimTarihi;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuMetroTextbox txt_demirbasFiyat;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
@@ -407,5 +440,8 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator4;
+        private System.Windows.Forms.Panel pnl_uyari;
+        private System.Windows.Forms.Label lbl_uyari;
+        private Bunifu.Framework.UI.BunifuMetroTextbox dp_alimTarihi;
     }
 }
