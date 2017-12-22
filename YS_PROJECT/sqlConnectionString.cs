@@ -23,6 +23,8 @@ namespace YS_PROJECT
 
         public static string personeller = "SELECT * FROM tblPersonel";
 
+        public static string demirbaslar3= "SELECT * FROM tblDemirbas";
+
         public static string demirbaslar = "SELECT d.demirbasAdi,dt.demirbasTuruAdi,d.fiyat,d.alimTarihi,d.adet FROM tblDemirbas d INNER JOIN tblDemirbasTurleri dt ON d.demirbasTuruID=dt.demirbasTuruID";
 
         public static string demirbaslar2 = "SELECT * FROM tblDemirbas where demirbasTuruID=@demirbasTuruID";

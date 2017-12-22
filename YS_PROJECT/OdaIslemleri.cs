@@ -27,7 +27,7 @@ namespace YS_PROJECT
             
             panel2.Controls.Clear();
             if (yetki == false)
-                MessageBox.Show("Bu alana erişiminiz yok !");
+                panel2.Controls.Add(new yetkiUyari());
             else
                 panel2.Controls.Add(new OdaEkle());
 
@@ -40,6 +40,9 @@ namespace YS_PROJECT
         private void btn_sil_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
+            if (yetki == false)
+                panel2.Controls.Add(new yetkiUyari());
+            else
             panel2.Controls.Add(new OdaSil());
 
             btn_sil.Normalcolor = Color.FromArgb(255, 36, 129, 77);
@@ -51,6 +54,9 @@ namespace YS_PROJECT
         private void btn_guncelle_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
+            if (yetki == false)
+                panel2.Controls.Add(new yetkiUyari());
+            else
             panel2.Controls.Add(new OdaGuncelle());
 
             btn_guncelle.Normalcolor = Color.FromArgb(255, 36, 129, 77);

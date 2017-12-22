@@ -24,6 +24,7 @@ namespace YS_PROJECT
         DemirbasIslemleri DI;
         DB_Operation dbo = new DB_Operation();
         List<string> kullaniciBilgi;
+        List<string[]> kullaniciAdSoyad;
         public MainScreen(List<String[]> kullanici)
         {
             this.kullanici = kullanici;
@@ -34,8 +35,8 @@ namespace YS_PROJECT
         }
         public void MainScreenYenileme()//Kullanıcı girişi yapıldıktran sonra ekranda olacak değişiklikler
         {
-            kullanici = dbo.Select(sqlConnectionString.kullanicininAdiSoyadi, sqlConnectionString.kAS, kullaniciBilgi);
-            lbl_kullanici.Text =" "+kullanici[0][0] +" "+ kullanici[0][1];
+            kullaniciAdSoyad = dbo.Select(sqlConnectionString.kullanicininAdiSoyadi, sqlConnectionString.kAS, kullaniciBilgi);
+            lbl_kullanici.Text =" "+ kullaniciAdSoyad[0][0] +" "+ kullaniciAdSoyad[0][1];
             lbl_kullanici.Text = lbl_kullanici.Text.ToUpper();
             panel1.Visible = true;
         }
@@ -50,8 +51,7 @@ namespace YS_PROJECT
             panel5.Controls.Clear();
             OS = new OdaIslemleri();
             panel5.Controls.Add(OS);
-            //  OS.yetkiKontrol(Convert.ToBoolean(kullanici[0][3]));
-            OS.yetkiKontrol(Convert.ToBoolean(true));
+            OS.yetkiKontrol(Convert.ToBoolean(kullanici[0][3]));
             OS.Show();
             NormalRengeDon();
             btn_odaIslem.Normalcolor = Color.FromArgb(255, 0, 172, 209);
@@ -69,7 +69,7 @@ namespace YS_PROJECT
             PI = new PersonelIslemleri();
             panel5.Controls.Clear();
             panel5.Controls.Add(PI);
-            PI.yetkiKontrol(Convert.ToBoolean(true));
+            PI.yetkiKontrol(kullanici);
             PI.Show();
             NormalRengeDon();
             btn_Personel.Normalcolor = Color.FromArgb(255, 0, 172, 209);
@@ -77,13 +77,19 @@ namespace YS_PROJECT
 
         private void btn_satinAlim_Click(object sender, EventArgs e)
         {
-            SA = new SatinAlimIslemleri();
             panel5.Controls.Clear();
-            panel5.Controls.Add(SA);
-            SA.yetkiKontrol(Convert.ToBoolean(true));
-            SA.Show();
-            NormalRengeDon();
-            btn_satinAlim.Normalcolor = Color.FromArgb(255, 0, 172, 209);
+            if (Convert.ToBoolean(kullanici[0][3]) == false)
+                panel5.Controls.Add(new yetkiUyari());
+            else
+            {
+                SA = new SatinAlimIslemleri();
+                panel5.Controls.Add(SA);
+                SA.yetkiKontrol(Convert.ToBoolean(kullanici[0][3]));
+                SA.Show();
+                NormalRengeDon();
+                btn_satinAlim.Normalcolor = Color.FromArgb(255, 0, 172, 209);
+            }
+          
         }
 
         private void btn_demirbasIslem_Click(object sender, EventArgs e)
@@ -91,7 +97,7 @@ namespace YS_PROJECT
             DI = new DemirbasIslemleri();
             panel5.Controls.Clear();
             panel5.Controls.Add(DI);
-            DI.yetkiKontrol(Convert.ToBoolean(true));
+            DI.yetkiKontrol(Convert.ToBoolean(kullanici[0][3]));
             DI.Show();
             NormalRengeDon();
             btn_demirbasIslem.Normalcolor = Color.FromArgb(255, 0, 172, 209);

@@ -54,7 +54,7 @@ namespace YS_PROJECT
         }
         public static Boolean KarakterKontrol(string gelenDeger)
         {
-            string Desen = @"[^a-zığüşçö]";
+            string Desen = @"[^a-zığüşçö\s]";
             reg = new Regex(Desen);
             if (reg.IsMatch(gelenDeger))
                 return true;

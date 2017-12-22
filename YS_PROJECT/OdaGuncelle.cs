@@ -163,6 +163,7 @@ namespace YS_PROJECT
             dd_guncelDepartman.selectedIndex = dd_departmanlar.selectedIndex;
             pnl_uyari.Visible = false;
             panel1.Visible = false;
+            panel2.Visible = false;
         }
 
         private void dd_fakulteler_onItemSelected(object sender, EventArgs e)
@@ -177,6 +178,7 @@ namespace YS_PROJECT
             DepartmanlariGetir(i);
             pnl_uyari.Visible = false;
             panel1.Visible = false;
+            panel2.Visible = false;
         }
 
     
@@ -190,6 +192,7 @@ namespace YS_PROJECT
             PersonelleriGetir(i);
             pnl_uyari.Visible = false;
             panel1.Visible = false;
+            panel2.Visible = false;
 
         }
         private void txt_GuncelOdalar_KeyPress_1(object sender, KeyPressEventArgs e)

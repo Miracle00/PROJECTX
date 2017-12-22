@@ -49,7 +49,7 @@
             this.btn_PersonelGuncelle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btn_PersonelGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_PersonelGuncelle.BorderRadius = 0;
-            this.btn_PersonelGuncelle.ButtonText = "PERSONEL GÜNCELLE";
+            this.btn_PersonelGuncelle.ButtonText = "PERSONEL GÜNCELLE / SİL";
             this.btn_PersonelGuncelle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_PersonelGuncelle.DisabledColor = System.Drawing.Color.Gray;
             this.btn_PersonelGuncelle.Iconcolor = System.Drawing.Color.Transparent;
@@ -72,7 +72,7 @@
             this.btn_PersonelGuncelle.selected = false;
             this.btn_PersonelGuncelle.Size = new System.Drawing.Size(300, 48);
             this.btn_PersonelGuncelle.TabIndex = 24;
-            this.btn_PersonelGuncelle.Text = "PERSONEL GÜNCELLE";
+            this.btn_PersonelGuncelle.Text = "PERSONEL GÜNCELLE / SİL";
             this.btn_PersonelGuncelle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_PersonelGuncelle.Textcolor = System.Drawing.Color.White;
             this.btn_PersonelGuncelle.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -43,8 +43,8 @@ namespace YS_PROJECT
         }
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            string ad = txt_personelAdi.Text;
-            string soyad = txt_personelSoyadi.Text;
+            string ad = txt_personelAdi.Text.Trim();
+            string soyad = txt_personelSoyadi.Text.Trim();
             //string pID="";
             List<string> personelBilgi = new List<string> { ad, soyad };
 

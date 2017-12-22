@@ -18,9 +18,11 @@ namespace YS_PROJECT
             TumDemirbaslar();
         }
         List<string[]> data;
+        List<string[]> dataID;
         DB_Operation dbo;
         Bunifu.Framework.UI.BunifuTextbox bt_arama;
         Bunifu.Framework.UI.BunifuDatepicker bd_arama;
+        List<String[]> odaDemirbasAtama;
         private void btn_AramaKriteri_onItemSelected_2(object sender, EventArgs e)//ARAMA KRİTERİ SEÇİLİRKEN TÜM DEMİRBAŞLAR GÖRÜNSÜN.
         {
             panel_fiyat.Visible = false;
@@ -154,7 +156,8 @@ namespace YS_PROJECT
             dbo = new DB_Operation();
             data = new List<string[]>();
             data = dbo.Select(sqlConnectionString.demirbaslar);
-
+            dataID = new List<string[]>();
+            dataID = dbo.Select(sqlConnectionString.demirbaslar3);
             FillGrid(data);
         }
 
@@ -163,6 +166,33 @@ namespace YS_PROJECT
             FillGrid(data);
             panel_arama.Controls.Clear();
 
+        }
+         public int KullanılanStokHesaplama()
+        {
+           odaDemirbasAtama = dbo.Select(sqlConnectionString.odaDemirbasGetir2);
+            int kullanılanStok = 0;
+            for (int i = 0; i < odaDemirbasAtama.Count; i++)
+            {
+
+                if (odaDemirbasAtama[i][2] == demirbas[dd_demirbaslar.selectedIndex][0])
+                {
+                    kullanılanStok += Convert.ToInt16(odaDemirbasAtama[i][3]);
+                }
+
+            }
+            return kullanılanStok;
+        }
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            Int32 selectedRowCount =
+             dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount == 1)
+            {
+                string selectR = dataGridView1.SelectedRows[0].Index.ToString();
+               // MessageBox.Show(dataGridView1.SelectedRows[0].ToString());
+                        MessageBox.Show(dataID[Convert.ToInt16(selectR)][0].ToString());
+            }
+            //SUANDA DEMİRBASIN İDSİNİ ÇEKİYORUZ STOK HESAPLAMA ÇAĞIRARAK NE KADAR KALDIĞINI HESAPLIYACAĞIZ OLAY BİTER.
         }
     }
 }

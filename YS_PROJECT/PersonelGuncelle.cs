@@ -12,8 +12,10 @@ namespace YS_PROJECT
 {
     public partial class PersonelGuncelle : UserControl
     {
-        public PersonelGuncelle()
+        int kullaniciID;
+        public PersonelGuncelle(int kullaniciID)
         {
+            this.kullaniciID = kullaniciID;
             InitializeComponent();
             personelGetir();
             kullaniciGetir();
@@ -124,10 +126,19 @@ namespace YS_PROJECT
                     pnl_uyari.Visible = true;
                     lst_personeller.Items.Clear();
                     personelGetir();
-                    pID = "";
                     txt_ad.Text = "";
                     txt_soyad.Text = "";
                     lst_odalar.Items.Clear();
+                    if (Convert.ToInt16(pID) == kullaniciID)
+                    {
+                        login login1 = new login();
+                        login1.Show();
+                        this.Hide();
+                    }
+                    else
+                        pID = "";
+                        
+                        
                 }
                 else
                 {
@@ -148,10 +159,12 @@ namespace YS_PROJECT
         {
 
             pnl_uyari.Visible = false;
-            string[] adsoyad = lst_personeller.SelectedItem.ToString().Split(' ');
+            string personelAdSoyad = "";
+            string adsoyad = lst_personeller.SelectedItem.ToString();
             for (int i = 0; i < prsnl.Count; i++)
             {
-                if (prsnl[i][1] == adsoyad[0] && prsnl[i][2] == adsoyad[1])
+                personelAdSoyad = prsnl[i][1] + " " + prsnl[i][2];
+                if (personelAdSoyad==adsoyad)
                 {
                     pID = prsnl[i][0];
                     txt_ad.Text = adsoyad[0].ToString();

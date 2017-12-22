@@ -98,7 +98,6 @@ namespace YS_PROJECT
                     TxtKontrol.SayiKontrol(txt_demirbasAdet.Text) == true && TxtKontrol.uzunlukKontrol(txt_demirbasAdet.Text) == true && TxtKontrol.dolulukKontrol(txt_demirbasAdet.Text) == true
                     && aciklamaKontrol==false)
                 {
-                    MessageBox.Show(demirbasAdi + " " + aciklama + " " + fiyat + " " + tarih + " " + dtindex + " " + fID + " " + dindex + " " + adet);
                     List<object> demirbasBilgi = new List<object> { demirbasAdi, aciklama, fiyat, tarih, dtindex, fID, dindex, adet };
                     bool flag = dbo.Save2(sqlConnectionString.demirbasEkle, sqlConnectionString.demirbasParam, demirbasBilgi);
                     if (flag)

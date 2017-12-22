@@ -48,6 +48,7 @@
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.btn_temizle = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.selectedRowsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_arama.SuspendLayout();
             this.panel_fiyat.SuspendLayout();
@@ -63,12 +64,12 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Enabled = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView1.Location = new System.Drawing.Point(201, 49);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(695, 512);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // Column1
             // 
@@ -263,10 +264,20 @@
             this.btn_temizle.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_temizle.Click += new System.EventHandler(this.btn_temizle_Click);
             // 
+            // selectedRowsButton
+            // 
+            this.selectedRowsButton.Location = new System.Drawing.Point(12, 249);
+            this.selectedRowsButton.Name = "selectedRowsButton";
+            this.selectedRowsButton.Size = new System.Drawing.Size(146, 62);
+            this.selectedRowsButton.TabIndex = 26;
+            this.selectedRowsButton.Text = "button1";
+            this.selectedRowsButton.UseVisualStyleBackColor = true;
+            // 
             // DemirbasArama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.selectedRowsButton);
             this.Controls.Add(this.panel_arama);
             this.Controls.Add(this.btn_AramaKriteri);
             this.Controls.Add(this.label4);
@@ -307,5 +318,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button selectedRowsButton;
     }
 }

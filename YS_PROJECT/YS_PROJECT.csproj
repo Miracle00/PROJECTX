@@ -166,6 +166,12 @@
     </Compile>
     <Compile Include="sqlConnectionString.cs" />
     <Compile Include="TxtKontrol.cs" />
+    <Compile Include="yetkiUyari.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="yetkiUyari.Designer.cs">
+      <DependentUpon>yetkiUyari.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DemirbasArama.resx">
       <DependentUpon>DemirbasArama.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yetkiUyari.resx">
+      <DependentUpon>yetkiUyari.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
