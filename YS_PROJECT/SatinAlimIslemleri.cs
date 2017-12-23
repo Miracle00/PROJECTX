@@ -77,7 +77,7 @@ namespace YS_PROJECT
                     if (item[1] == dtAdi)
                         dtindex = item[0];
                 }
-                string demirbasAdi = txt_demirbasAdi.Text;
+                string demirbasAdi = txt_demirbasAdi.Text.Trim();
                 string aciklama = "";
                 string fiyat = txt_demirbasFiyat.Text;
                 string adet = txt_demirbasAdet.Text;
@@ -103,7 +103,7 @@ namespace YS_PROJECT
                 }
                     
                 if (TxtKontrol.SayiKontrol2(txt_demirbasFiyat.Text) == true && TxtKontrol.uzunlukKontrol(txt_demirbasFiyat.Text) == true && TxtKontrol.dolulukKontrol(txt_demirbasFiyat.Text) == true &&
-                    TxtKontrol.SayiKontrol(txt_demirbasAdet.Text) == true && TxtKontrol.uzunlukKontrol(txt_demirbasAdet.Text) == true && TxtKontrol.dolulukKontrol(txt_demirbasAdet.Text) == true
+                    TxtKontrol.SayiKontrol(txt_demirbasAdet.Text) == true && TxtKontrol.uzunlukKontrol2(txt_demirbasAdet.Text) == true && TxtKontrol.dolulukKontrol(txt_demirbasAdet.Text) == true
                     && aciklamaKontrol==false)
                 {
                     List<object> demirbasBilgi = new List<object> { demirbasAdi, aciklama, fiyat, tarih, dtindex, fID, dindex, adet };
