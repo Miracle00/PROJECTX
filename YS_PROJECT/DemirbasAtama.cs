@@ -68,11 +68,9 @@ namespace YS_PROJECT
             data = dbo.Select(sqlConnectionString.odaDemirbasGetir, sqlConnectionString.odaDemirbasGetirParam, sOdaID);
 
             dataGridView1.Rows.Clear();
-            string[] row;
             foreach (string[] rowArray in data)
             {
-                row =new string[] {rowArray[1], rowArray[2], rowArray[3], rowArray[4] };
-                dataGridView1.Rows.Add(row);
+                dataGridView1.Rows.Add(rowArray);
             }
         }
         public void FakulteleriGetir()//FAKULTELER
@@ -252,8 +250,8 @@ namespace YS_PROJECT
             {
                 string selectR = dataGridView1.SelectedRows[0].Index.ToString();
                 string secilenOdaID = odalar[dd_odalar.selectedIndex][0];
-                string secilenDemirbasID = data[Convert.ToInt16(selectR)][0];
-                DialogResult dialogResult = MessageBox.Show(odalar[dd_odalar.selectedIndex][1].ToString() + " üzerindeki " + dataGridView1.SelectedRows[0].Cells[1].Value.ToString()+ " demirbaşlarını kaldırmak istediğinizden emin misiniz ", "Oda demirbaş kaldır", MessageBoxButtons.YesNo);
+                string secilenDemirbasID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                DialogResult dialogResult = MessageBox.Show(odalar[dd_odalar.selectedIndex][1].ToString() + " üzerindeki " + dataGridView1.SelectedRows[0].Cells[2].Value.ToString()+ " demirbaşlarını kaldırmak istediğinizden emin misiniz ", "Oda demirbaş kaldır", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     List<string> gelenbilgiler =new List<string>() { secilenOdaID, secilenDemirbasID };

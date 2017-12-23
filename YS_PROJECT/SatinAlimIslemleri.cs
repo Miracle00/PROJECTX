@@ -84,9 +84,17 @@ namespace YS_PROJECT
                 DateTime tarih = Convert.ToDateTime(dp_alimTarihi.Text);
                 Boolean aciklamaKontrol = false;
                 if (TxtKontrol.dolulukKontrol(txt_aciklama.Text) == true && txt_aciklama.Text.Length <= 200 && TxtKontrol.KarakterKontrol2(txt_aciklama.Text) == false)
+                {
                     aciklama = txt_aciklama.Text;
+                    aciklamaKontrol = false;
+                }
+
                 else if (TxtKontrol.dolulukKontrol(txt_aciklama.Text) == false)
+                {
                     aciklama = "";
+                    aciklamaKontrol = false;
+                }
+                    
                 else
                 {
                     panel_uyari(false);
@@ -99,17 +107,11 @@ namespace YS_PROJECT
                     && aciklamaKontrol==false)
                 {
                     List<object> demirbasBilgi = new List<object> { demirbasAdi, aciklama, fiyat, tarih, dtindex, fID, dindex, adet };
-                    bool flag = dbo.Save2(sqlConnectionString.demirbasEkle, sqlConnectionString.demirbasParam, demirbasBilgi);
-                    if (flag)
-                    {
+                    dbo.Save2(sqlConnectionString.demirbasEkle, sqlConnectionString.demirbasParam, demirbasBilgi);
+
                         panel_uyari(true);
                         lbl_uyari.Text = "Satın alım başarılı.";
-                    }
-                    else
-                    {
-                        panel_uyari(false);
-                        lbl_uyari.Text = "Eksik veya hatalı bilgi";
-                    }
+
                 }
                 else
                 {

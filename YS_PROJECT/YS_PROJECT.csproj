@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB_Operation.cs" />
-    <Compile Include="Demirbas.cs" />
     <Compile Include="DemirbasArama.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -71,16 +70,12 @@
     <Compile Include="DemirbasIslemleri.designer.cs">
       <DependentUpon>DemirbasIslemleri.cs</DependentUpon>
     </Compile>
-    <Compile Include="DemirbasTur.cs" />
-    <Compile Include="Departman.cs" />
-    <Compile Include="Fakulte.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kullanici.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,14 +88,12 @@
     <Compile Include="MainScreen.designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Oda.cs" />
     <Compile Include="OdaBilgileri.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="OdaBilgileri.designer.cs">
       <DependentUpon>OdaBilgileri.cs</DependentUpon>
     </Compile>
-    <Compile Include="OdaDemirbasAtama.cs" />
     <Compile Include="OdaEkle.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,7 +118,6 @@
     <Compile Include="OdaSil.designer.cs">
       <DependentUpon>OdaSil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Personel.cs" />
     <Compile Include="PersonelArama.cs">
       <SubType>UserControl</SubType>
     </Compile>

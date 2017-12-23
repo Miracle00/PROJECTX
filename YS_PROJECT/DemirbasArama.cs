@@ -187,12 +187,21 @@ namespace YS_PROJECT
             Int32 selectedRowCount =dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount == 1)
             {
-                string selectR = dataGridView1.SelectedRows[0].Index.ToString();
-                string stokDemirbasID = dataID[Convert.ToInt32(selectR)][0];
-                int toplamDemirbas =Convert.ToInt16(dataID[Convert.ToInt32(selectR)][8]);
-                label_stok.Text=(toplamDemirbas-KullanılanStokHesaplama(stokDemirbasID)).ToString();
-
-                        MessageBox.Show(dataID[Convert.ToInt16(selectR)][0].ToString());
+                int toplamDemirbas = 0;
+                string selectR = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                //  string stokDemirbasID = dataID[Convert.ToInt32(selectR)][0];
+                for (int i = 0; i < dataID.Count; i++)
+                {
+                    if (dataID[i][0] == selectR)
+                    {
+                        toplamDemirbas = Convert.ToInt16(dataID[i][8]);
+                        break;
+                    }
+                        
+                }
+                label_stok.Text=(toplamDemirbas-KullanılanStokHesaplama(selectR)).ToString();
+                    
+                     //   MessageBox.Show((dataGridView1.SelectedRows[0].Cells[0].Value).ToString());
             }
             //SUANDA DEMİRBASIN İDSİNİ ÇEKİYORUZ STOK HESAPLAMA ÇAĞIRARAK NE KADAR KALDIĞINI HESAPLIYACAĞIZ OLAY BİTER.
         }
