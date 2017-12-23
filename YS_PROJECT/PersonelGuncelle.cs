@@ -167,8 +167,8 @@ namespace YS_PROJECT
                 if (personelAdSoyad==adsoyad)
                 {
                     pID = prsnl[i][0];
-                    txt_ad.Text = adsoyad[0].ToString();
-                    txt_soyad.Text = adsoyad[1].ToString();
+                    txt_ad.Text = prsnl[i][1].ToString();
+                    txt_soyad.Text = prsnl[i][2].ToString();
                     break;
                 }
             }

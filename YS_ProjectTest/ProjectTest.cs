@@ -13,7 +13,8 @@ namespace YS_ProjectTest
         public void STOKDBConnection()
         {
             //STOKDB ye bağlantı yapabiliyor mu
-            string baglanti = @"Data Source=TOSHIBAPC\SQLEXPRESS;Initial Catalog=StokDB;Integrated Security=True";
+            string baglanti=@"Data Source=DESKTOP-3RES620;Initial Catalog=StokDB;Integrated Security=True";
+
             SqlConnection baglan = new SqlConnection(baglanti);
             baglan.Open();
         }

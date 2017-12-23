@@ -400,6 +400,7 @@
             // 
             this.Column1.HeaderText = "demirbasID";
             this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
