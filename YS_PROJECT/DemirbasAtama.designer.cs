@@ -54,6 +54,7 @@
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pnl_uyari = new System.Windows.Forms.Panel();
             this.lbl_uyari = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnl_uyari.SuspendLayout();
             this.SuspendLayout();
@@ -332,6 +333,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(644, 280);
             this.dataGridView1.TabIndex = 93;
+            this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -404,10 +406,21 @@
             this.lbl_uyari.TabIndex = 1;
             this.lbl_uyari.Text = "İşlem Başarısız !";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(239, 440);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(386, 13);
+            this.label1.TabIndex = 97;
+            this.label1.Text = "Odanın üzerindeki demirbaşı silmek için tablodan demirbaşın üzerine çift tıklayın" +
+    "ız.";
+            // 
             // DemirbasAtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pnl_uyari);
             this.Controls.Add(this.txt_adet);
             this.Controls.Add(this.bunifuCustomLabel5);
@@ -465,5 +478,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private System.Windows.Forms.Panel pnl_uyari;
         private System.Windows.Forms.Label lbl_uyari;
+        private System.Windows.Forms.Label label1;
     }
 }

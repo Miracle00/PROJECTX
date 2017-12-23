@@ -31,6 +31,9 @@ namespace YS_PROJECT
             if (dd_fakulteler.selectedIndex != -1 && dd_departmanlar.selectedIndex != -1 && dd_odalar.selectedIndex != -1)
             {
                 dd_demirbasTur.Clear();
+                dd_demirbaslar.Clear();
+                txt_stokMiktari.Text = "";
+                txt_adet.Text = "";
                 FillGrid();
                 DemirbasTurGetir();
                 pnl_uyari.Visible = false;
@@ -65,9 +68,11 @@ namespace YS_PROJECT
             data = dbo.Select(sqlConnectionString.odaDemirbasGetir, sqlConnectionString.odaDemirbasGetirParam, sOdaID);
 
             dataGridView1.Rows.Clear();
+            string[] row;
             foreach (string[] rowArray in data)
             {
-                dataGridView1.Rows.Add(rowArray);
+                row =new string[] {rowArray[1], rowArray[2], rowArray[3], rowArray[4] };
+                dataGridView1.Rows.Add(row);
             }
         }
         public void FakulteleriGetir()//FAKULTELER
@@ -142,7 +147,13 @@ namespace YS_PROJECT
             List<string> i = new List<string>() { index };
             DepartmanlariGetir(i);
             pnl_uyari.Visible = false;
-
+            dd_demirbasTur.Clear();
+            dd_demirbaslar.Clear();
+            txt_stokMiktari.Text = "";
+            txt_adet.Text = "";
+            dd_odalar.Clear();
+            DemirbasTurGetir();
+            dataGridView1.Rows.Clear();
         }
 
         private void dd_departmanlar_onItemSelected(object sender, EventArgs e)
@@ -152,6 +163,12 @@ namespace YS_PROJECT
             List<string> i = new List<string>() { index };
             OdalariGetir(i);
             pnl_uyari.Visible = false;
+            dd_demirbasTur.Clear();
+            dd_demirbaslar.Clear();
+            txt_stokMiktari.Text = "";
+            txt_adet.Text = "";
+            DemirbasTurGetir();
+            dataGridView1.Rows.Clear();
 
         }
 
@@ -178,7 +195,7 @@ namespace YS_PROJECT
             {
                 if (TxtKontrol.SayiKontrol(txt_adet.Text) && TxtKontrol.dolulukKontrol(txt_adet.Text) && TxtKontrol.uzunlukKontrol2(txt_adet.Text))
                 {
-                    if (Convert.ToInt16(txt_stokMiktari.Text) > Convert.ToInt32(txt_adet.Text))
+                    if (Convert.ToInt16(txt_stokMiktari.Text) >= Convert.ToInt32(txt_adet.Text) && Convert.ToInt32(txt_adet.Text)>0)
                     {                 
                         string secilenDemirbasID = demirbas[dd_demirbaslar.selectedIndex][0];
                         string secilenOdaID = odalar[dd_odalar.selectedIndex][0];
@@ -195,7 +212,7 @@ namespace YS_PROJECT
                     else
                     {
                         panel_uyari(false);
-                        lbl_uyari.Text = "Adet sayısı fazla";
+                        lbl_uyari.Text = "Adet sayısı hatalı";
                     }
 
 
@@ -220,6 +237,30 @@ namespace YS_PROJECT
         private void dd_odalar_onItemSelected(object sender, EventArgs e)
         {
             pnl_uyari.Visible=false;
+            dd_demirbasTur.Clear();
+            dd_demirbaslar.Clear();
+            txt_stokMiktari.Text = "";
+            txt_adet.Text = "";
+            DemirbasTurGetir();
+            dataGridView1.Rows.Clear();
+        }
+
+        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount == 1)
+            {
+                string selectR = dataGridView1.SelectedRows[0].Index.ToString();
+                string secilenOdaID = odalar[dd_odalar.selectedIndex][0];
+                string secilenDemirbasID = data[Convert.ToInt16(selectR)][0];
+                DialogResult dialogResult = MessageBox.Show(odalar[dd_odalar.selectedIndex][1].ToString() + " üzerindeki " + dataGridView1.SelectedRows[0].Cells[1].Value.ToString()+ " demirbaşlarını kaldırmak istediğinizden emin misiniz ", "Oda demirbaş kaldır", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    List<string> gelenbilgiler =new List<string>() { secilenOdaID, secilenDemirbasID };
+                    dbo.Delete(sqlConnectionString.odaSeciliDemirbasSil, sqlConnectionString.odaSeciliDemirbasSilParametreler, gelenbilgiler);
+                    FillGrid();
+                }
+            }
         }
     }
 }

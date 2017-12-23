@@ -57,7 +57,7 @@ namespace YS_PROJECT
         public static List<string> odaGuncelleParam4 = new List<string>() { "personelID","odaID" };
 
 
-        public static string odaDemirbasGetir= "select dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama,SUM(oda.adet) from (tblOdaDemirbasAtama oda inner join (tblDemirbas d inner join tblDemirbasTurleri dt on d.demirbasTuruID = dt.demirbasTuruID) on oda.demirbasID=d.demirbasID) inner join tblOda o  on o.odaID=oda.odaID where o.odaID=@odaID GROUP BY d.demirbasID,dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama";
+        public static string odaDemirbasGetir= "select d.demirbasID,dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama,SUM(oda.adet) from (tblOdaDemirbasAtama oda inner join (tblDemirbas d inner join tblDemirbasTurleri dt on d.demirbasTuruID = dt.demirbasTuruID) on oda.demirbasID=d.demirbasID) inner join tblOda o  on o.odaID=oda.odaID where o.odaID=@odaID GROUP BY d.demirbasID,dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama";
         public static List<string> odaDemirbasGetirParam = new List<string>() { "odaID" };
 
 
@@ -84,7 +84,7 @@ namespace YS_PROJECT
 
         //public static string odaDemirbasGetir3 = " select d.fakulteID,d.departmanID,d.demirbasTuruID,d.demirbasID,dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama,oda.adet from (tblOdaDemirbasAtama oda inner join (tblDemirbas d inner join tblDemirbasTurleri dt on d.demirbasTuruID = dt.demirbasTuruID) on oda.demirbasID=d.demirbasID) inner join tblOda o  on o.odaID=oda.odaID where o.odaID=@odaID";
         public static string odaDemirbasGetir3 = "select dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama,SUM(oda.adet) from (tblOdaDemirbasAtama oda inner join (tblDemirbas d inner join tblDemirbasTurleri dt on d.demirbasTuruID = dt.demirbasTuruID) on oda.demirbasID=d.demirbasID) inner join tblOda o  on o.odaID=oda.odaID where o.odaID=@odaID GROUP BY d.demirbasID,dt.demirbasTuruAdi,d.demirbasAdi,d.aciklama order by dt.demirbasTuruAdi";
-        public static string odgdbk="select d.fakulteID,d.departmanID,d.demirbasTuruID,d.demirbasID from (tblOdaDemirbasAtama oda inner join(tblDemirbas d inner join tblDemirbasTurleri dt on d.demirbasTuruID = dt.demirbasTuruID) on oda.demirbasID = d.demirbasID) inner join tblOda o  on o.odaID=oda.odaID where o.odaID=@odaID order by d.fakulteID, d.departmanID, d.demirbasTuruID, d.demirbasID";
+        public static string odgdbk= "select d.fakulteID,d.departmanID,d.demirbasTuruID,d.demirbasID from (tblOdaDemirbasAtama oda inner join(tblDemirbas d inner join tblDemirbasTurleri dt on d.demirbasTuruID = dt.demirbasTuruID) on oda.demirbasID = d.demirbasID) inner join tblOda o  on o.odaID=oda.odaID where o.odaID=@odaID group by d.fakulteID, d.departmanID, d.demirbasTuruID, d.demirbasID order by d.fakulteID, d.departmanID, d.demirbasTuruID, d.demirbasID";
         public static List<string> odaDemirbasGetirParam3 = new List<string>() { "odaID" };
 
         public static string personelSil = "DELETE FROM tblPersonel where personelID=@personelID";
@@ -92,6 +92,13 @@ namespace YS_PROJECT
 
         public static string kullanciSil = "DELETE FROM tblKullanicilar where personelID=@personelID";
         public static List<string> kullaniciSilParametreler = new List<string>() { "personelID" };
+
+        //ODA ÜZERİNDEKİ TÜM DEMİRBAŞLARIN SİLİNMESİ
+        public static string odaTümDemirbasSil = "DELETE FROM tblOdaDemirbasAtama where odaID=@odaID";
+        public static List<string> odaTümDemirbasSilParametreler = new List<string>() { "odaID" };
+        //ODA ÜZERİNDEKİ SECİLİ DEMİRBAŞLARIN SİLİNMESİ
+        public static string odaSeciliDemirbasSil = "DELETE FROM tblOdaDemirbasAtama where odaID=@odaID AND demirbasID=@demirbasID";
+        public static List<string> odaSeciliDemirbasSilParametreler = new List<string>() { "odaID","demirbasID" };
 
         public static string kullanicininAdiSoyadi = "select  p.personelAdi,p.personelSoyad from tblKullanicilar k inner join tblPersonel p on k.personelID=p.personelID where p.personelID=@personelID";
         public static List<string> kAS = new List<string>() { "personelID" };

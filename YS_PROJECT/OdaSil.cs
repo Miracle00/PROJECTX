@@ -25,6 +25,7 @@ namespace YS_PROJECT
         {
             if (dd_fakulteler.selectedIndex != -1 && dd_departmanlar.selectedIndex != -1 && dd_oda.selectedIndex != -1)
             {
+                dbo.Delete(sqlConnectionString.odaTümDemirbasSil, sqlConnectionString.odaTümDemirbasSilParametreler, silinenOdaID);
                 if (dbo.Delete(sqlConnectionString.odaSil, sqlConnectionString.odaSilParametreler, silinenOdaID))
                 {
                     pnl_uyari.Visible = true;
@@ -101,7 +102,6 @@ namespace YS_PROJECT
         {
             silinenOdaID = new List<string>();
             silinenOdaID.Add(odalar[dd_oda.selectedIndex][0]);
-            MessageBox.Show(silinenOdaID.ToString());
             pnl_uyari.Visible = false;
         }
     }

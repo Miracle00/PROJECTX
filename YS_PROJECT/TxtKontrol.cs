@@ -40,7 +40,7 @@ namespace YS_PROJECT
         }
         public static Boolean uzunlukKontrol(string gelenDeger)
         {
-            if (gelenDeger.Length<=15)
+            if (gelenDeger.Length<=15 && gelenDeger.Length>=2)
                 return true;
             else
                 return false;

@@ -167,14 +167,14 @@ namespace YS_PROJECT
             panel_arama.Controls.Clear();
 
         }
-         public int KullanılanStokHesaplama()
+         public int KullanılanStokHesaplama(string stokDemirbas)
         {
            odaDemirbasAtama = dbo.Select(sqlConnectionString.odaDemirbasGetir2);
             int kullanılanStok = 0;
             for (int i = 0; i < odaDemirbasAtama.Count; i++)
             {
 
-                if (odaDemirbasAtama[i][2] == demirbas[dd_demirbaslar.selectedIndex][0])
+                if (odaDemirbasAtama[i][2] == stokDemirbas)
                 {
                     kullanılanStok += Convert.ToInt16(odaDemirbasAtama[i][3]);
                 }
@@ -184,12 +184,14 @@ namespace YS_PROJECT
         }
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-            Int32 selectedRowCount =
-             dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            Int32 selectedRowCount =dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount == 1)
             {
                 string selectR = dataGridView1.SelectedRows[0].Index.ToString();
-               // MessageBox.Show(dataGridView1.SelectedRows[0].ToString());
+                string stokDemirbasID = dataID[Convert.ToInt32(selectR)][0];
+                int toplamDemirbas =Convert.ToInt16(dataID[Convert.ToInt32(selectR)][8]);
+                label_stok.Text=(toplamDemirbas-KullanılanStokHesaplama(stokDemirbasID)).ToString();
+
                         MessageBox.Show(dataID[Convert.ToInt16(selectR)][0].ToString());
             }
             //SUANDA DEMİRBASIN İDSİNİ ÇEKİYORUZ STOK HESAPLAMA ÇAĞIRARAK NE KADAR KALDIĞINI HESAPLIYACAĞIZ OLAY BİTER.

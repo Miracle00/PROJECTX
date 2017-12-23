@@ -48,7 +48,8 @@
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.btn_temizle = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.selectedRowsButton = new System.Windows.Forms.Button();
+            this.label_stok = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_arama.SuspendLayout();
             this.panel_fiyat.SuspendLayout();
@@ -264,20 +265,31 @@
             this.btn_temizle.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_temizle.Click += new System.EventHandler(this.btn_temizle_Click);
             // 
-            // selectedRowsButton
+            // label_stok
             // 
-            this.selectedRowsButton.Location = new System.Drawing.Point(12, 249);
-            this.selectedRowsButton.Name = "selectedRowsButton";
-            this.selectedRowsButton.Size = new System.Drawing.Size(146, 62);
-            this.selectedRowsButton.TabIndex = 26;
-            this.selectedRowsButton.Text = "button1";
-            this.selectedRowsButton.UseVisualStyleBackColor = true;
+            this.label_stok.AutoSize = true;
+            this.label_stok.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Underline);
+            this.label_stok.Location = new System.Drawing.Point(5, 279);
+            this.label_stok.Name = "label_stok";
+            this.label_stok.Size = new System.Drawing.Size(0, 23);
+            this.label_stok.TabIndex = 26;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(4, 242);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 23);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "STOK SAYISI";
             // 
             // DemirbasArama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.selectedRowsButton);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label_stok);
             this.Controls.Add(this.panel_arama);
             this.Controls.Add(this.btn_AramaKriteri);
             this.Controls.Add(this.label4);
@@ -318,6 +330,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button selectedRowsButton;
+        private System.Windows.Forms.Label label_stok;
+        private System.Windows.Forms.Label label6;
     }
 }
